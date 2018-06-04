@@ -40,6 +40,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
 import ThumbsUpDownIcon from "@material-ui/icons/ThumbsUpDown";
 import StarsIcon from "@material-ui/icons/Stars";
+import CompareArrows from "@material-ui/icons/CompareArrows";
 
 var pages = [
   {
@@ -83,8 +84,8 @@ var dashRoutes = [
   },
   {
     path: "/dashboard",
-    name: "Settings",
-    icon: SettingsIcon,
+    name: "Transactions",
+    icon: CompareArrows,
     component: Dashboard
   },
   { redirect: true, path: "/", pathTo: "/myreputation", name: "My Reputation" }
