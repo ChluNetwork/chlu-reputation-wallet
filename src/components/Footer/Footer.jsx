@@ -31,23 +31,23 @@ function Footer({ ...props }) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="#home" className={block}>
+              <a href="/" className={block}>
                 {rtlActive ? "الصفحة الرئيسية" : "Home"}
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#company" className={block}>
+              <a href="http://www.chlu.io" className={block}>
                 {rtlActive ? "شركة" : "Company"}
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={block}>
-                {rtlActive ? "بعدسة" : "Portfolio"}
+              <a href="https://medium.com/chlunetwork" className={block}>
+                {rtlActive ? "مدونة" : "Blog"}
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={block}>
-                {rtlActive ? "مدونة" : "Blog"}
+              <a href="https://github.com/ChluNetwork" className={block}>
+                {rtlActive ? "بعدسة" : "Source"}
               </a>
             </ListItem>
           </List>

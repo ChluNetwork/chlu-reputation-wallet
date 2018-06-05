@@ -47,34 +47,17 @@ class LoginPage extends React.Component {
                 <LoginCard
                   customCardClass={classes[this.state.cardAnimaton]}
                   headerColor="rose"
-                  cardTitle="Login"
-                  cardSubtitle="Or Be Classical"
+                  cardTitle="Decentralized Login"
                   footerAlign="center"
                   footer={
                     <Button color="roseNoBackground" wd size="lg">
                       Let's Go
                     </Button>
                   }
-                  socials={[
-                    "fab fa-facebook-square",
-                    "fab fa-twitter",
-                    "fab fa-google-plus"
-                  ].map((prop, key) => {
-                    return (
-                      <Button
-                        color="simple"
-                        justIcon
-                        key={key}
-                        customClass={classes.customButtonClass}
-                      >
-                        <i className={prop} />
-                      </Button>
-                    );
-                  })}
                   content={
                     <div>
                       <CustomInput
-                        labelText="First Name.."
+                        labelText="Your DID or Chlu Username.."
                         id="firstname"
                         formControlProps={{
                           fullWidth: true
@@ -88,21 +71,7 @@ class LoginPage extends React.Component {
                         }}
                       />
                       <CustomInput
-                        labelText="Email..."
-                        id="email"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                        inputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <Email className={classes.inputAdornmentIcon} />
-                            </InputAdornment>
-                          )
-                        }}
-                      />
-                      <CustomInput
-                        labelText="Password"
+                        labelText="Your Private Key"
                         id="password"
                         formControlProps={{
                           fullWidth: true
