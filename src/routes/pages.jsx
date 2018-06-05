@@ -3,6 +3,7 @@ import LoginPage from "views/Pages/LoginPage.jsx";
 import RegisterPage from "views/Pages/RegisterPage.jsx";
 import LockScreenPage from "views/Pages/LockScreenPage.jsx";
 import HomePage from "views/Pages/HomePage.jsx";
+import RegPage from "views/Pages/RegPage.jsx";
 
 // @material-ui/icons
 import PersonAdd from "@material-ui/icons/PersonAdd";
@@ -15,19 +16,11 @@ import ExpandMore from "@material-ui/icons/ExpandMore"
 const pagesRoutes = [
   {
     path: "/pages/home-page",
-    name: "Home Page",
-    short: "Home",
-    mini: "HP",
-    icon: Home,
-    component: HomePage
-  },
-  {
-    path: "/pages/register-page",
     name: "Register Page",
     short: "Register",
     mini: "RP",
     icon: PersonAdd,
-    component: RegisterPage
+    component: HomePage
   },
   {
     path: "/pages/login-page",
@@ -52,5 +45,6 @@ const pagesRoutes = [
     name: "Home Page"
   }
 ];
+
 
 export default pagesRoutes;

@@ -47,18 +47,6 @@ class PagesHeader extends React.Component {
     });
     var list = (
       <List className={classes.list}>
-        <ListItem className={classes.listItem}>
-          <NavLink to={"/myreputation"} className={classes.navLink}>
-            <ListItemIcon className={classes.listItemIcon}>
-              <Dashboard />
-            </ListItemIcon>
-            <ListItemText
-              primary={"Dashboard"}
-              disableTypography={true}
-              className={classes.listItemText}
-            />
-          </NavLink>
-        </ListItem>
         {pagesRoutes.map((prop, key) => {
           if (prop.redirect) {
             return null;
@@ -90,10 +78,10 @@ class PagesHeader extends React.Component {
         <Toolbar className={classes.container}>
           <div className={classes.flex}>
 
-
-            <img src={logo} alt="logo" className={classes.logo} />
-
-            <Button href="#" className={classes.title}>
+            <a href="/">
+              <img src={logo} alt="logo" className={classes.logo} />
+            </a>
+            <Button href="/" className={classes.title}>
               Your Reputation Wallet
             </Button>
           </div>

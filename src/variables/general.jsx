@@ -12,6 +12,7 @@ import AccessTime from "@material-ui/icons/AccessTime"
 import Lock from "@material-ui/icons/Lock"
 import Business from "@material-ui/icons/Business"
 import EuroSymbol from "@material-ui/icons/EuroSymbol"
+import VerifiedUser from "@material-ui/icons/VerifiedUser"
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
@@ -25,10 +26,10 @@ const stories = [
   {
     // First story
     inverted: true,
-    badgeColor: "danger",
+    badgeColor: "info",
     badgeIcon: StarHalf,
-    title: "The Importance of Online Ratings & Reviews",
-    titleColor: "danger",
+    title: "The Commercial Importance of Online Ratings & Reviews",
+    titleColor: "info",
     body: (
       <p>
       Online ratings and reviews are absolutely critical to commercial success in today's economy. As early as 2012 a <a href="https://scholarship.sha.cornell.edu/chrpubs/5">study from Cornell University</a> showed that if a hotel on Tripadvisor could increase their average customer reviews by just one star, they could increase their prices by up to 11.2% without affecting their occupancy rate.
@@ -40,7 +41,7 @@ const stories = [
     // Second story
     badgeColor: "success",
     badgeIcon: Web,
-    title: "Reputation Portability Problem",
+    title: "The Reputation Portability Problem",
     titleColor: "success",
     body: (
       <p>
@@ -52,10 +53,10 @@ const stories = [
   {
     // Third story
     inverted: true,
-    badgeColor: "info",
+    badgeColor: "warning",
     badgeIcon: AccessTime,
-    title: "Ratings & Reviews In the Gig Economy",
-    titleColor: "info",
+    title: "Broken Ratings & Reviews In the Gig Economy",
+    titleColor: "warning",
     body: (
       <div>
         <p>
@@ -69,10 +70,10 @@ const stories = [
   },
   {
     // Fourth story
-    badgeColor: "warning",
+    badgeColor: "danger",
     badgeIcon: Lock,
-    title: "Reputation Data Ownership & Control",
-    titleColor: "warning",
+    title: "Lack of Reputation Data Ownership & Control",
+    titleColor: "danger",
     body: (
       <p>
         Sarah O’Connor at The Financial Times writes a highly informative piece on the importance of reputation and the current inability to port it across online platforms in the gig economy and how GDPR will help.
@@ -85,10 +86,10 @@ const stories = [
   {
     // Third story
     inverted: true,
-    badgeColor: "info",
+    badgeColor: "primary",
     badgeIcon: Business,
     title: "UK Government-Commissioned Independent Assessment of the Economy",
-    titleColor: "info",
+    titleColor: "primary",
     body: (
       <div>
         <p>
@@ -102,10 +103,10 @@ const stories = [
   },
   {
     // Fourth story
-    badgeColor: "warning",
+    badgeColor: "info",
     badgeIcon: EuroSymbol,
     title: "European General Data Protection Regulation (GDPR) Legislation",
-    titleColor: "warning",
+    titleColor: "info",
     body: (
       <p>
         European GDPR <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/">data portability legislation</a> enshrines the rights of EU citizens and businesses to access and port their reputation data.
@@ -114,7 +115,31 @@ const stories = [
     footer: (
       "EU GDPR, May 2018"
     )
+  },
+  {
+    // Fifth story
+    inverted: true,
+    badgeColor: "success",
+    badgeIcon: VerifiedUser,
+    title: "The Global Issue of Fake Reviews",
+    titleColor: "success",
+    body: (
+      <p>
+      In addition to solving the reputation ownership and portability problem, Chlu also helps solve the major global problem of fake reviews by leveraging proof of payment on blockchain.
+      Fake reviews have been shown to be a huge problem on all major platforms:
+      Up to 1 in 5 reviews on <a href="https://www.marketwatch.com/story/20-of-yelp-reviews-are-fake-2013-09-24">Yelp have been reported as fake</a>;
+      The recent <a href="http://fortune.com/2017/12/10/tripadvisor-london-shed-fake-restaurant/">manipulation of TripAdvisor's ratings system</a> received global media coverage;
+      The BBC again highlighted <a href="http://www.bbc.com/news/technology-43907695">the global problem</a> in April 2018;
+      Buzzfeed wrote about the <a href="https://www.buzzfeed.com/nicolenguyen/amazon-fake-review-problem">industry of fake reviews on Amazon</a> in May 2018 and
+      NPR recently <a href="https://www.npr.org/sections/money/2018/04/27/606528176/episode-838-a-series-of-mysterious-packages">documented</a> the continued massive problem on Taobao/Alibaba.
+
+      </p>
+    ),
+    footer: (
+      "Multiple Media Sources"
+    )
   }
+
 
 ];
 

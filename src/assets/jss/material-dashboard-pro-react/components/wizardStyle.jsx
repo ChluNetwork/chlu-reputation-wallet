@@ -78,8 +78,7 @@ const wizardStyle = {
     color: "#555555 !important"
   },
   content: {
-    marginTop: "20px",
-    minHeight: "340px",
+    marginTop: "5px",
     padding: "20px 15px"
   },
   stepContent: {

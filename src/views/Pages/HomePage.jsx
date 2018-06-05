@@ -44,6 +44,13 @@ import TestimonialCard from "components/Cards/TestimonialCard.jsx";
 import Table from "components/Table/Table.jsx";
 import Timeline from "components/Timeline/Timeline.jsx";
 
+import Step1 from "./WizardSteps/Step1.jsx";
+import Step2 from "./WizardSteps/Step2.jsx";
+import Step3 from "./WizardSteps/Step3.jsx";
+import Wizard from "components/Wizard/Wizard.jsx";
+
+
+
 import { stories, bugs, website, server } from "variables/general.jsx";
 
 import image from "assets/img/faces/card-profile1-square.jpg";
@@ -77,6 +84,10 @@ class HomePage extends React.Component {
     this.setState({
       checked: newChecked
     });
+  }
+
+  testSubmit(event) {
+    console.log("submitting register form");
   }
 
   render() {
@@ -150,79 +161,20 @@ class HomePage extends React.Component {
                       </ItemGrid>
                     </GridContainer>
                     <GridContainer justify="center">
-                      <ItemGrid xs={12} sm={12} md={12}>
-                        <hr></hr>
-                        <div className={classes.cta}>
-                          <h4>Get Started</h4>
-                        </div>
-                      </ItemGrid>
-                      <ItemGrid xs={12} sm={12} md={6}>
-                        <form className={classes.form}>
-                          <CustomInput
-                            formControlProps={{
-                              fullWidth: true,
-                              className: classes.customFormControlClasses
-                            }}
-                            inputProps={{
-                              startAdornment: (
-                                <InputAdornment
-                                  position="start"
-                                  className={classes.inputAdornment}
-                                >
-                                  <Face className={classes.inputAdornmentIcon} />
-                                </InputAdornment>
-                              ),
-                              placeholder: "Username..."
-                            }}
-                          />
-                          <CustomInput
-                            formControlProps={{
-                              fullWidth: true,
-                              className: classes.customFormControlClasses
-                            }}
-                            inputProps={{
-                              startAdornment: (
-                                <InputAdornment
-                                  position="start"
-                                  className={classes.inputAdornment}
-                                >
-                                  <Email className={classes.inputAdornmentIcon} />
-                                </InputAdornment>
-                              ),
-                              placeholder: "Email..."
-                            }}
-                          />
-                          <FormControlLabel
-                            classes={{
-                              root: classes.checkboxLabelControl,
-                              label: classes.checkboxLabel
-                            }}
-                            control={
-                              <Checkbox
-                                tabIndex={-1}
-                                onClick={() => this.handleToggle(1)}
-                                checkedIcon={
-                                  <Check className={classes.checkedIcon} />
-                                }
-                                icon={<Check className={classes.uncheckedIcon} />}
-                                classes={{
-                                  checked: classes.checked
-                                }}
-                              />
-                            }
-                            label={
-                              <span>
-                                I agree to the{" "}
-                                <a href="#pablo">terms and conditions</a>.
-                              </span>
-                            }
-                          />
-                            <Button round color="rose">
-                              Create My Wallet
-                            </Button>
-                        </form>
+                      <ItemGrid xs={12} sm={12}>
+                        <Wizard
+                          validate
+                          steps={[
+                            { stepName: "1: Create Your Wallet", stepComponent: Step1, stepId: "get started" },
+                            { stepName: "2: More About You", stepComponent: Step2, stepId: "about" },
+                            { stepName: "3: Claim Your Reputation", stepComponent: Step3, stepId: "reviews" },
+                          ]}
+                          title="Let's Get Started"
+                          subtitle="Follow The Three Easy Steps Below To Begin"
+                        />
                       </ItemGrid>
                     </GridContainer>
+
                   </div>
                 }
               />
