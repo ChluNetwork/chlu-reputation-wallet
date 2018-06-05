@@ -49,8 +49,6 @@ import RegularCard from "components/Cards/RegularCard.jsx";
 import NavPills from "components/NavPills/NavPills.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 
-
-import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import regularFormsStyle from "assets/jss/material-dashboard-pro-react/views/regularFormsStyle";
 
 const style = {
@@ -59,9 +57,18 @@ const style = {
     margin: "10px 0 30px",
     textAlign: "center"
   },
-  ...customSelectStyle
+  card: {
+    display: "inline-block",
+    position: "relative",
+    width: "100%",
+    margin: "1px 0",
+    boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.14)",
+    borderRadius: "6px",
+    color: "rgba(0, 0, 0, 0.87)",
+    background: "#fff"
+  },
+  ...regularFormsStyle
 };
-
 
 class Step3 extends React.Component {
   constructor(props) {
@@ -135,7 +142,6 @@ class Step3 extends React.Component {
                 <RegularCard
                   cardTitle="To begin, simply enter your email & password for any of the sites below on which you have an active profile.
                   We extract, merge and decentrally store your reputation in a portable format so you own and control it."
-                  cardSubtitle="Chlu guarantees that no information submitted from this form is ever stored on our system"
                   content={
                     <span>
                     <form onSubmit={this.testSubmit}>
@@ -301,17 +307,6 @@ class Step3 extends React.Component {
                           </GridContainer>
                         </ItemGrid>
                       </GridContainer>
-                      <GridContainer justify="flex-end">
-                        <ItemGrid xs={12} sm={12} md={3}>
-                          <Button color="rose" type="submit">Submit</Button>
-                        </ItemGrid>
-                        <ItemGrid xs={12} sm={12} md={12} className={classes.infoText}>
-                          <br></br>
-                          <h7>By submitting this form you acknowledge you are entitled to invoke your <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and
-                          <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/"> data portability rights</a> under European <a href="https://www.eugdpr.org/">GDPR</a> legislation.
-                          </h7>
-                        </ItemGrid>
-                      </GridContainer>
                       </form>
                     </span>
                   }
@@ -325,7 +320,6 @@ class Step3 extends React.Component {
                 <RegularCard
                   cardTitle="To begin, simply enter your email & password for any of the sites below on which you have an active profile.
                   We extract, merge and decentrally store your reputation in a portable format so you own and control it."
-                  cardSubtitle="Chlu guarantees that no information submitted from this form is ever stored on our system"
                   content={
                     <span>
                     <GridContainer>
@@ -408,17 +402,6 @@ class Step3 extends React.Component {
                         </GridContainer>
                       </ItemGrid>
                     </GridContainer>
-                    <GridContainer justify="flex-end">
-                      <ItemGrid xs={12} sm={12} md={3}>
-                        <Button color="rose">Submit</Button>
-                      </ItemGrid>
-                      <ItemGrid xs={12} sm={12} md={12}>
-                        <br></br>
-                        <h7>By submitting this form you acknowledge you are entitled to invoke your <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and
-                        <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/"> data portability rights</a> under European <a href="https://www.eugdpr.org/">GDPR</a> legislation.
-                        </h7>
-                      </ItemGrid>
-                    </GridContainer>
                     </span>
                   }
                 />
@@ -431,7 +414,6 @@ class Step3 extends React.Component {
               <RegularCard
                 cardTitle="To begin, simply enter your email & password for any of the sites below on which you have an active profile.
                 We extract, merge and decentrally store your reputation in a portable format so you own and control it."
-                cardSubtitle="Chlu guarantees that no information submitted from this form is ever stored on our system"
                 content={
                   <span>
                   <GridContainer>
@@ -514,17 +496,6 @@ class Step3 extends React.Component {
                       </GridContainer>
                     </ItemGrid>
                   </GridContainer>
-                  <GridContainer justify="flex-end">
-                    <ItemGrid xs={12} sm={12} md={3}>
-                      <Button color="rose">Submit</Button>
-                    </ItemGrid>
-                    <ItemGrid xs={12} sm={12} md={12}>
-                      <br></br>
-                      <h7>By submitting this form you acknowledge you are entitled to invoke your <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and
-                      <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/"> data portability rights</a> under European <a href="https://www.eugdpr.org/">GDPR</a> legislation.
-                      </h7>
-                    </ItemGrid>
-                  </GridContainer>
                   </span>
                 }
               />
@@ -533,10 +504,19 @@ class Step3 extends React.Component {
           ]}
         />
       </GridContainer>
+      <GridContainer justify="flex-end">
+        <ItemGrid xs={12} sm={12} md={12} className={classes.infoText}>
+          <h7>Chlu guarantees that no information submitted from this form is ever stored on our system</h7>
+          <br></br>
+          <h7>By submitting this form you acknowledge you are entitled to invoke your <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and
+          <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/"> data portability rights</a> under European <a href="https://www.eugdpr.org/">GDPR</a> legislation.
+          </h7>
+        </ItemGrid>
+      </GridContainer>
     </div>
 
     );
   }
 }
 
-export default withStyles(regularFormsStyle)(Step3);
+export default withStyles(style)(Step3);

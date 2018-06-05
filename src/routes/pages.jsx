@@ -3,7 +3,6 @@ import LoginPage from "views/Pages/LoginPage.jsx";
 import RegisterPage from "views/Pages/RegisterPage.jsx";
 import LockScreenPage from "views/Pages/LockScreenPage.jsx";
 import HomePage from "views/Pages/HomePage.jsx";
-import RegPage from "views/Pages/RegPage.jsx";
 
 // @material-ui/icons
 import PersonAdd from "@material-ui/icons/PersonAdd";

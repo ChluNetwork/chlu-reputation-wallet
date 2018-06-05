@@ -15,8 +15,6 @@ import PictureUpload from "components/CustomUpload/PictureUpload.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
-
-
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
 
@@ -104,8 +102,6 @@ class Step2 extends React.Component {
             Download Your Private Key
           </Button>
         </ItemGrid>
-
-
         <ItemGrid xs={12} sm={12}>
           <hr></hr>
           <h4 className={classes.infoText}>
@@ -154,27 +150,6 @@ class Step2 extends React.Component {
               endAdornment: (
                 <InputAdornment position="end" className={classes.inputAdornment}>
                   <RecordVoiceOver className={classes.inputAdornmentIcon} />
-                </InputAdornment>
-              )
-            }}
-          />
-          <CustomInput
-            success={this.state.usernameState === "success"}
-            error={this.state.usernameState === "error"}
-            labelText={
-              <span>
-                Username <small>(required)</small>
-              </span>
-            }
-            id="username"
-            formControlProps={{
-              fullWidth: true
-            }}
-            inputProps={{
-              onChange: event => this.change(event, "username", "length", 3),
-              endAdornment: (
-                <InputAdornment position="end" className={classes.inputAdornment}>
-                  <Face className={classes.inputAdornmentIcon} />
                 </InputAdornment>
               )
             }}

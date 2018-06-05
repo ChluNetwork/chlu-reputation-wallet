@@ -29,10 +29,10 @@ const style = {
   inputAdornmentIcon: {
     color: "#555"
   },
-  choiche: {
+  choice: {
     textAlign: "center",
     cursor: "pointer",
-    marginTop: "20px"
+    marginTop: "10px"
   },
   ...customSelectStyle,
   ...customCheckboxRadioSwitch

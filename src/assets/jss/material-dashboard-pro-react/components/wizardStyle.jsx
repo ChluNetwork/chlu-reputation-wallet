@@ -17,7 +17,6 @@ const wizardStyle = {
     display: "inline-block",
     position: "relative",
     width: "100%",
-    margin: "25px 0",
     boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.14)",
     borderRadius: "6px",
     color: "rgba(0, 0, 0, 0.87)",
