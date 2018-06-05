@@ -18,10 +18,6 @@ import Star from "@material-ui/icons/Star";
 import Lock from "@material-ui/icons/Lock";
 import CallMerge from "@material-ui/icons/CallMerge";
 import Web from "@material-ui/icons/Web";
-
-
-// @material-ui/icons
-import Timeline from "@material-ui/icons/Timeline";
 import Payment from "@material-ui/icons/Payment";
 import Code from "@material-ui/icons/Code";
 import Group from "@material-ui/icons/Group";
@@ -29,6 +25,9 @@ import Face from "@material-ui/icons/Face";
 import Email from "@material-ui/icons/Email";
 import LockOutline from "@material-ui/icons/LockOutline";
 import Check from "@material-ui/icons/Check";
+import BugReport from "@material-ui/icons/BugReport";
+import Cloud from "@material-ui/icons/Cloud";
+
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -39,6 +38,16 @@ import IconButton from "components/CustomButtons/IconButton.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 import PricingCard from "components/Cards/PricingCard.jsx";
+import HeaderCard from "components/Cards/HeaderCard.jsx";
+import TasksCard from "components/Cards/TasksCard.jsx";
+import TestimonialCard from "components/Cards/TestimonialCard.jsx";
+import Table from "components/Table/Table.jsx";
+import Timeline from "components/Timeline/Timeline.jsx";
+
+import { stories, bugs, website, server } from "variables/general.jsx";
+
+import image from "assets/img/faces/card-profile1-square.jpg";
+
 
 import avatar from "assets/img/faces/avatar.jpg";
 
@@ -217,6 +226,14 @@ class HomePage extends React.Component {
                   </div>
                 }
               />
+            </ItemGrid>
+          </GridContainer>
+          <GridContainer>
+            <ItemGrid xs={12} sm={12} md={12}>
+              <h2 className={classes.learnMore}><a name="more"></a>Learn More - The Problem With Ratings & Reviews Today</h2>
+            </ItemGrid>
+            <ItemGrid xs={12}>
+              <RegularCard plainCard content={<Timeline stories={stories} />} />
             </ItemGrid>
           </GridContainer>
         </div>

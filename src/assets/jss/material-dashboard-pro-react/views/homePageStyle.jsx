@@ -22,7 +22,6 @@ const homePageStyle = {
     ...defaultFont,
     color: "#FFFFFF",
     marginTop: "13vh",
-    marginBottom: "30px",
     textAlign: "center"
   },
   description: {
@@ -54,6 +53,13 @@ const homePageStyle = {
   ...customCheckboxRadioSwitch,
   cardTitle: {
     fontSize: "2.6em"
+  },
+  learnMore: {
+    ...defaultFont,
+    color: "#FFFFFF",
+    marginTop: "8vh",
+    marginBottom: "0vh",
+    textAlign: "center"
   }
 };
 

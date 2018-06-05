@@ -10,6 +10,7 @@ import Fingerprint from "@material-ui/icons/Fingerprint";
 import MonetizationOn from "@material-ui/icons/MonetizationOn";
 import LockOpen from "@material-ui/icons/LockOpen";
 import Home from "@material-ui/icons/Home"
+import ExpandMore from "@material-ui/icons/ExpandMore"
 
 const pagesRoutes = [
   {
@@ -37,11 +38,11 @@ const pagesRoutes = [
     component: LoginPage
   },
   {
-    path: "/pages/pricing-page",
-    name: "Pricing Page",
-    short: "Pricing",
+    path: "/pages/home-page/#more",
+    name: "Learn More",
+    short: "Learn",
     mini: "PP",
-    icon: MonetizationOn,
+    icon: ExpandMore,
     component: PricingPage
   },
   {

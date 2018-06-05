@@ -94,7 +94,7 @@ class PagesHeader extends React.Component {
             <img src={logo} alt="logo" className={classes.logo} />
 
             <Button href="#" className={classes.title}>
-              Reputation Wallet
+              Your Reputation Wallet
             </Button>
           </div>
           <Hidden smDown implementation="css">

@@ -6,166 +6,16 @@ import Extension from "@material-ui/icons/Extension";
 import Fingerprint from "@material-ui/icons/Fingerprint";
 import FlightLand from "@material-ui/icons/FlightLand";
 import Build from "@material-ui/icons/Build";
+import StarHalf from "@material-ui/icons/StarHalf"
+import Web from "@material-ui/icons/Web"
+import AccessTime from "@material-ui/icons/AccessTime"
+import Lock from "@material-ui/icons/Lock"
+import Business from "@material-ui/icons/Business"
+import EuroSymbol from "@material-ui/icons/EuroSymbol"
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 
-// ##############################
-// // // stories for RTLSupport view
-// #############################
-
-const rtlStories = [
-  {
-    // First story
-    inverted: true,
-    badgeColor: "danger",
-    badgeIcon: CardTravel,
-    title: "جهة أي",
-    titleColor: "danger",
-    body: (
-      <p>
-        قام كل ماذا العصبة اوروبا. أي جورج العالمي أخر, كان تم أطراف القوى
-        استبدال. أسر ميناء تكتيكاً الجديدة، كل. جُل اللا التكاليف بـ, عرفها
-        النزاع لليابان بـ أضف. انتهت المدن الثالث من وقد.وقبل قادة إحتار عن أخر.
-        حين ونتج أخرى قد. بالعمل بالمطالبة فقد قد. عن جنوب ومضى الشتاء.
-      </p>
-    ),
-    footerTitle: "مدن أن هُزم سكان, مكن."
-  },
-  {
-    // Second story
-    inverted: true,
-    badgeColor: "success",
-    badgeIcon: Extension,
-    title: "جُل حكومة",
-    titleColor: "success",
-    body: (
-      <p>
-        عل فكانت الثقيلة بلا. شيء بخطوط بالرّغم التبرعات عن, يطول بأيدي لم كلّ.
-        معقل الغالي واتّجه لم وتم, أن الصفحة بالمحور حول, بال مرمى الصفحات
-        قُدُماً و. الأخذ سبتمبر العالم من ذلك. ان يبق شدّت الأبرياء, الى الربيع،
-        والمانيا كل. ودول الأهداف التقليدي عل أضف, كلا يقوم الأخذ الآلاف بل.
-      </p>
-    )
-  },
-  {
-    // Third story
-    inverted: true,
-    badgeColor: "info",
-    badgeIcon: Fingerprint,
-    title: "هذا غينيا",
-    titleColor: "info",
-    body: (
-      <p>
-        جهة المارق والديون التقليدية في, هو وترك المجتمع بريطانيا ذلك, لمّ ما
-        العالم، اليابان،. ٣٠ فقامت أوروبا مشاركة بعد, ٢٠٠٤ الجو مساعدة ما حدى.
-        في عليها وبحلول معارضة بعض. عن الأرض وبداية العمليات ولم. الجو جديداً
-        الأوروبيّون أم به،. ثم التي نتيجة الآلاف جعل, عن المارق السادس قام. ما
-        أخر فقامت الأجل الشرق،, فصل كل وسوء الأرواح. ثم بعد وشعار بأيدي. قبل
-        وكسبت الغالي الولايات بل, ٣٠ أمّا أخرى لأداء أضف. هو منتصف معزّزة على.
-        بـ أفريقيا التغييرات مما, أثره،.
-      </p>
-    ),
-    footer: (
-      <CustomDropdown
-        rtlActive
-        buttonColor="info"
-        buttonIcon={Build}
-        buttonProps={{
-          round: true,
-          style: { marginBottom: "0" }
-        }}
-        dropdownList={[
-          "ان",
-          "إجلاء لفرنسا",
-          "أواخر الأرض بل",
-          { divider: true },
-          "عل اليها"
-        ]}
-      />
-    )
-  }
-];
-
-// ##############################
-// // // stories for Widgets view
-// #############################
-
-const widgetStories = [
-  {
-    // First story
-    inverted: true,
-    badgeColor: "danger",
-    badgeIcon: CardTravel,
-    title: "Some Title",
-    titleColor: "danger",
-    body: (
-      <p>
-        Wifey made the best Father's Day meal ever. So thankful so happy so
-        blessed. Thank you for making my family We just had fun with the
-        “future” theme !!! It was a fun night all together ... The always rude
-        Kanye Show at 2am Sold Out Famous viewing @ Figueroa and 12th in
-        downtown.
-      </p>
-    ),
-    footerTitle: "11 hours ago via Twitter"
-  },
-  {
-    // Second story
-    inverted: true,
-    badgeColor: "success",
-    badgeIcon: Extension,
-    title: "Another One",
-    titleColor: "success",
-    body: (
-      <p>
-        Thank God for the support of my wife and real friends. I also wanted to
-        point out that it’s the first album to go number 1 off of streaming!!! I
-        love you Ellen and also my number one design rule of anything I do from
-        shoes to music to homes is that Kim has to like it....
-      </p>
-    )
-  },
-  {
-    // Third story
-    inverted: true,
-    badgeColor: "info",
-    badgeIcon: Fingerprint,
-    title: "Another Title",
-    titleColor: "info",
-    body: (
-      <div>
-        <p>
-          Called I Miss the Old Kanye That’s all it was Kanye And I love you
-          like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown
-          LA 11:10PM
-        </p>
-        <p>
-          What if Kanye made a song about Kanye Royère doesn't make a Polar bear
-          bed but the Polar bear couch is my favorite piece of furniture we own
-          It wasn’t any Kanyes Set on his goals Kanye
-        </p>
-      </div>
-    ),
-    footer: (
-      <CustomDropdown
-        buttonColor="info"
-        buttonIcon={Build}
-        buttonProps={{
-          round: true,
-          style: { marginBottom: "0" }
-        }}
-        dropdownList={[
-          "Action",
-          "Another action",
-          "Something else here",
-          { divider: true },
-          "Separated link"
-        ]}
-      />
-    )
-  }
-];
 
 // ##############################
 // // // stories for Timeline view
@@ -176,89 +26,96 @@ const stories = [
     // First story
     inverted: true,
     badgeColor: "danger",
-    badgeIcon: CardTravel,
-    title: "Some Title",
+    badgeIcon: StarHalf,
+    title: "The Importance of Online Ratings & Reviews",
     titleColor: "danger",
     body: (
       <p>
-        Wifey made the best Father's Day meal ever. So thankful so happy so
-        blessed. Thank you for making my family We just had fun with the
-        “future” theme !!! It was a fun night all together ... The always rude
-        Kanye Show at 2am Sold Out Famous viewing @ Figueroa and 12th in
-        downtown.
+      Online ratings and reviews are absolutely critical to commercial success in today's economy. As early as 2012 a <a href="https://scholarship.sha.cornell.edu/chrpubs/5">study from Cornell University</a> showed that if a hotel on Tripadvisor could increase their average customer reviews by just one star, they could increase their prices by up to 11.2% without affecting their occupancy rate.
       </p>
     ),
-    footerTitle: "11 hours ago via Twitter"
+    footerTitle: "Cornell University Study, 2012"
   },
   {
     // Second story
     badgeColor: "success",
-    badgeIcon: Extension,
-    title: "Another One",
+    badgeIcon: Web,
+    title: "Reputation Portability Problem",
     titleColor: "success",
     body: (
       <p>
-        Thank God for the support of my wife and real friends. I also wanted to
-        point out that it’s the first album to go number 1 off of streaming!!! I
-        love you Ellen and also my number one design rule of anything I do from
-        shoes to music to homes is that Kim has to like it....
+        Reputation data portability is a major problem as <a href="https://medium.com/doteveryone/exploring-portable-ratings-for-gig-workers-5632fd9b262e">documented</a> by <a href="https://doteveryone.org.uk">DotEveryone</a>, the London based, fairer internet think tank.
       </p>
+    ),
+    footerTitle: "DotEveryone, fairer internet think tank, Feb 2018"
+  },
+  {
+    // Third story
+    inverted: true,
+    badgeColor: "info",
+    badgeIcon: AccessTime,
+    title: "Ratings & Reviews In the Gig Economy",
+    titleColor: "info",
+    body: (
+      <div>
+        <p>
+          Wired Magazine writes about the <a href="https://www.wired.com/story/how-to-fix-ratings-in-the-gig-economy">importance of enabling ratings and reviews portability</a> in the burgeoning gig economy.
+        </p>
+      </div>
+    ),
+    footer: (
+      "Wired Magazine, Dec 2017"
+    )
+  },
+  {
+    // Fourth story
+    badgeColor: "warning",
+    badgeIcon: Lock,
+    title: "Reputation Data Ownership & Control",
+    titleColor: "warning",
+    body: (
+      <p>
+        Sarah O’Connor at The Financial Times writes a highly informative piece on the importance of reputation and the current inability to port it across online platforms in the gig economy and how GDPR will help.
+      </p>
+    ),
+    footer: (
+      "Financial Times, April 2018"
     )
   },
   {
     // Third story
     inverted: true,
     badgeColor: "info",
-    badgeIcon: Fingerprint,
-    title: "Another Title",
+    badgeIcon: Business,
+    title: "UK Government-Commissioned Independent Assessment of the Economy",
     titleColor: "info",
     body: (
       <div>
         <p>
-          Called I Miss the Old Kanye That’s all it was Kanye And I love you
-          like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown
-          LA 11:10PM
-        </p>
-        <p>
-          What if Kanye made a song about Kanye Royère doesn't make a Polar bear
-          bed but the Polar bear couch is my favorite piece of furniture we own
-          It wasn’t any Kanyes Set on his goals Kanye
+          The <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/627671/good-work-taylor-review-modern-working-practices-rg.pdf">Taylor Report</a>, a 2017 independent assessment of the UK economy commissioned directly by the UK government explicitly highlights the problem and urges the government to enact legislation to address the issue, stating: Government should strongly encourage gig platforms to enable individuals to be able to carry their verified approval ratings with them when they move from the platform and to share them with third parties.
         </p>
       </div>
     ),
     footer: (
-      <CustomDropdown
-        buttonColor="info"
-        buttonIcon={Build}
-        buttonProps={{
-          round: true,
-          style: { marginBottom: "0" }
-        }}
-        dropdownList={[
-          "Action",
-          "Another action",
-          "Something else here",
-          { divider: true },
-          "Separated link"
-        ]}
-      />
+      "Taylor Report, July 2017"
     )
   },
   {
     // Fourth story
     badgeColor: "warning",
-    badgeIcon: FlightLand,
-    title: "Another One",
+    badgeIcon: EuroSymbol,
+    title: "European General Data Protection Regulation (GDPR) Legislation",
     titleColor: "warning",
     body: (
       <p>
-        Tune into Big Boy's 92.3 I'm about to play the first single from Cruel
-        Winter also to Kim’s hair and makeup Lorraine jewelry and the whole
-        style squad at Balmain and the Yeezy team. Thank you Anna for the invite
-        thank you to the whole Vogue team
+        European GDPR <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/">data portability legislation</a> enshrines the rights of EU citizens and businesses to access and port their reputation data.
       </p>
+    ),
+    footer: (
+      "EU GDPR, May 2018"
     )
   }
+
 ];
 
 // ##############################
@@ -416,11 +273,6 @@ const dataTable = {
 export {
   // data for React Big Calendar in Calendar view
   events,
-  // stories for RTLSupport view
-  rtlStories,
-  // stories for Widgets view
-  widgetStories,
-  // stories for Timeline view
   stories,
   // these 3 are used to create the tasks lists in TasksCard - Widget view
   bugs,
