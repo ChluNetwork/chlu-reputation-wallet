@@ -38,7 +38,7 @@ import Code from "@material-ui/icons/Code";
 import Group from "@material-ui/icons/Group";
 import Web from "@material-ui/icons/Web";
 import StarHalf from "@material-ui/icons/StarHalf";
-
+import Business from "@material-ui/icons/Business";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -62,6 +62,7 @@ const style = {
   ...customSelectStyle
 };
 
+
 class Step2 extends React.Component {
   constructor(props) {
     super(props);
@@ -78,6 +79,13 @@ class Step2 extends React.Component {
   isValidated() {
     return true;
   }
+
+  testSubmit(event) {
+    event.preventDefault();
+    alert('LOAD THE CRAWLER RESULTS');
+  }
+
+
   render() {
     const { classes } = this.props;
     return (
@@ -85,14 +93,14 @@ class Step2 extends React.Component {
       <GridContainer justify="center" >
         <ItemGrid xs={12} sm={12} md={9} style={{ backgroundColor: '#ffffcc' }}>
           <br></br>
-          <h4 className={classes.infoText}>Do You Manage An Online Profile (eg, are you a freelancer or do you own a business) That Receives Ratings & Reviews?</h4>
+          <h4 className={classes.infoText}>Do You Manage An Online Profile That Receives Ratings & Reviews?</h4>
         </ItemGrid>
       </GridContainer>
       <GridContainer justify="center">
         <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: '#ffffcc' }}>
           <InfoArea
-            title="Profile Type"
-            description="Select Your Profile Type"
+            title="Select Profile Type"
+            description="What Profile Type of Yours Gets Reviews Online - Individual, Business or Specific Product"
             icon={AccountBox}
             iconColor="rose"
           />
@@ -100,15 +108,15 @@ class Step2 extends React.Component {
         <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: '#ffffcc' }}>
           <InfoArea
             title="Profile Platforms"
-            description="Enter Your Email & Password On the Sites Below Where Your Profile Exists"
+            description="Enter Your Email & Password On the Sites Where That Profile Exists"
             icon={Web}
             iconColor="primary"
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: '#ffffcc' }}>
           <InfoArea
-            title="Portable Ratings & Reviews"
-            description="We Merge, Normalize & Decentrally Store Your Ratings & Reviews So You Can Move Them from Platform to Platform"
+            title="Get Portable Ratings & Reviews"
+            description="We Merge, Normalize & Decentrally Store Your Ratings & Reviews So You Can Take them to Any Website"
             icon={StarHalf}
             iconColor="info"
           />
@@ -311,8 +319,8 @@ class Step2 extends React.Component {
               )
             },
             {
-              tabButton: "Restaurants",
-              tabIcon: Restaurant,
+              tabButton: "Businesses",
+              tabIcon: Business,
               tabContent: (
                 <RegularCard
                   cardTitle="To begin, simply enter your email & password for any of the sites below on which you have an active profile.
@@ -414,112 +422,6 @@ class Step2 extends React.Component {
                     </span>
                   }
                 />
-              )
-            },
-            {
-              tabButton: "Hotels",
-              tabIcon: Hotel,
-              tabContent: (
-              <RegularCard
-                cardTitle="To begin, simply enter your email & password for any of the sites below on which you have an active profile.
-                We extract, merge and decentrally store your reputation in a portable format so you own and control it."
-                cardSubtitle="Chlu guarantees that no information submitted from this form is ever stored on our system"
-                content={
-                  <span>
-                  <GridContainer>
-                    <ItemGrid xs={12} sm={2}>
-                      <FormLabel className={classes.labelHorizontal}>
-                        Expedia Email
-                      </FormLabel>
-                    </ItemGrid>
-                    <ItemGrid xs={12} sm={10}>
-                      <GridContainer>
-                        <ItemGrid xs={12} sm={12} md={4}>
-                          <CustomInput
-                            id="md3"
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                            inputProps={{
-                              placeholder: ""
-                            }}
-                            helpText="We never store your Expedia email"
-                          />
-                        </ItemGrid>
-                        <ItemGrid xs={12} sm={2}>
-                          <FormLabel className={classes.labelHorizontal}>
-                            Expedia Password
-                          </FormLabel>
-                        </ItemGrid>
-                        <ItemGrid xs={12} sm={12} md={4}>
-                          <CustomInput
-                            id="md5"
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                            inputProps={{
-                              placeholder: ""
-                            }}
-                            helpText="We never store your Expedia password"
-                          />
-                        </ItemGrid>
-                      </GridContainer>
-                    </ItemGrid>
-                  </GridContainer>
-                  <GridContainer>
-                    <ItemGrid xs={12} sm={2}>
-                      <FormLabel className={classes.labelHorizontal}>
-                        TripAdvisor Email
-                      </FormLabel>
-                    </ItemGrid>
-                    <ItemGrid xs={12} sm={10}>
-                      <GridContainer>
-                        <ItemGrid xs={12} sm={12} md={4}>
-                          <CustomInput
-                            id="md3"
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                            inputProps={{
-                              placeholder: ""
-                            }}
-                            helpText="We never store your TripAdvisor email"
-                          />
-                        </ItemGrid>
-                        <ItemGrid xs={12} sm={2}>
-                          <FormLabel className={classes.labelHorizontal}>
-                            TripAdvisor Password
-                          </FormLabel>
-                        </ItemGrid>
-                        <ItemGrid xs={12} sm={12} md={4}>
-                          <CustomInput
-                            id="md5"
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                            inputProps={{
-                              placeholder: ""
-                            }}
-                            helpText="We never store your TripAdvisor password"
-                          />
-                        </ItemGrid>
-                      </GridContainer>
-                    </ItemGrid>
-                  </GridContainer>
-                  <GridContainer justify="flex-end">
-                    <ItemGrid xs={12} sm={12} md={3}>
-                      <Button color="rose">Submit</Button>
-                    </ItemGrid>
-                    <ItemGrid xs={12} sm={12} md={12}>
-                      <br></br>
-                      <h7>By submitting this form you acknowledge you are entitled to invoke your <a href="https://gdpr-info.eu/recitals/no-63/">data access rights</a> and
-                      <a href="https://www.i-scoop.eu/gdprarticle/gdpr-article-20-right-data-portability/"> data portability rights</a> under European <a href="https://www.eugdpr.org/">GDPR</a> legislation.
-                      </h7>
-                    </ItemGrid>
-                  </GridContainer>
-                  </span>
-                }
-              />
               )
             },
             {

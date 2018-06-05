@@ -31,8 +31,8 @@ const pricingCardStyle = {
   cardTitle: {
     marginBottom: "0",
     marginTop: "10px",
-    color: "#999999",
-    fontSize: "14px"
+    color: "#000000",
+    fontSize: "24px"
   },
   cardPrice: {
     marginTop: "30px",
@@ -40,7 +40,7 @@ const pricingCardStyle = {
     color: "#3C4858"
   },
   cardDescription: {
-    color: "#999999",
+    color: "#000000",
     fontSize: "14px"
   },
   primary: {

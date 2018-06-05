@@ -6,8 +6,6 @@ import ItemGrid from "components/Grid/ItemGrid.jsx";
 
 import Step1 from "./WizardSteps/Step1.jsx";
 import Step2 from "./WizardSteps/Step2.jsx";
-import Step3 from "./WizardSteps/Step3.jsx";
-import Step4 from "./WizardSteps/Step4.jsx";
 
 
 import regularFormsStyle from "assets/jss/material-dashboard-pro-react/views/regularFormsStyle";
@@ -20,11 +18,6 @@ import dashboardStyle from "assets/jss/material-dashboard-pro-react/views/dashbo
 
 class MyReputation extends React.Component {
 
-
-  testSubmit(event) {
-    event.preventDefault();
-    alert('LOAD THE CRAWLER RESULTS2');
-  }
 
   render() {
     const { classes } = this.props;

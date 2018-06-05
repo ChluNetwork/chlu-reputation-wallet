@@ -41,6 +41,10 @@ const pagesHeaderStyle = theme => ({
   flex: {
     flex: 1
   },
+  logo: {
+    height: "80px",
+    width: "80px"
+  },
   title: {
     ...defaultFont,
     lineHeight: "30px",

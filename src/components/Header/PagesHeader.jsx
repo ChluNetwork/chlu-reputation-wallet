@@ -20,6 +20,8 @@ import ListItemText from "material-ui/List/ListItemText";
 import Dashboard from "@material-ui/icons/Dashboard";
 import Menu from "@material-ui/icons/Menu";
 
+import logo from "assets/img/chlu.svg";
+
 import pagesRoutes from "routes/pages.jsx";
 
 import pagesHeaderStyle from "assets/jss/material-dashboard-pro-react/components/pagesHeaderStyle.jsx";
@@ -46,7 +48,7 @@ class PagesHeader extends React.Component {
     var list = (
       <List className={classes.list}>
         <ListItem className={classes.listItem}>
-          <NavLink to={"/dashboard"} className={classes.navLink}>
+          <NavLink to={"/myreputation"} className={classes.navLink}>
             <ListItemIcon className={classes.listItemIcon}>
               <Dashboard />
             </ListItemIcon>
@@ -87,8 +89,12 @@ class PagesHeader extends React.Component {
       <AppBar position="static" className={classes.appBar + appBarClasses}>
         <Toolbar className={classes.container}>
           <div className={classes.flex}>
+
+
+            <img src={logo} alt="logo" className={classes.logo} />
+
             <Button href="#" className={classes.title}>
-              Material Dashboard Pro React
+              Reputation Wallet
             </Button>
           </div>
           <Hidden smDown implementation="css">
