@@ -52,9 +52,9 @@ import InfoArea from "components/InfoArea/InfoArea.jsx";
 import regularFormsStyle from "assets/jss/material-dashboard-pro-react/views/regularFormsStyle";
 
 const style = {
-  infoText: {
+  profileText: {
     fontWeight: "300",
-    margin: "10px 0 30px",
+    margin: "10px 0px 0px 0px",
     textAlign: "center"
   },
   card: {
@@ -98,31 +98,30 @@ class Step3 extends React.Component {
     return (
     <div>
       <GridContainer justify="center" >
-        <ItemGrid xs={12} sm={12} md={9} style={{ backgroundColor: '#ffffcc' }}>
-          <br></br>
-          <h4 className={classes.infoText}>Do You Manage An Online Profile That Receives Ratings & Reviews?</h4>
+        <ItemGrid xs={12} sm={12} md={9} style={{ backgroundColor: 'rgba(200, 200, 200, .2)' }}>
+          <h4 className={classes.profileText}>Do You Manage An Online Profile That Receives Ratings & Reviews?</h4>
         </ItemGrid>
       </GridContainer>
       <GridContainer justify="center">
-        <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: '#ffffcc' }}>
+        <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: 'rgba(200, 200, 200, .2)' }}>
           <InfoArea
             title="Select Profile Type"
-            description="What Profile Type of Yours Gets Reviews Online - Individual, Business or Specific Product"
+            description="Select Your Profile Type That Currently Receives Reviews - Individual, Business or Specific Product"
             icon={AccountBox}
             iconColor="rose"
           />
         </ItemGrid>
-        <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: '#ffffcc' }}>
+        <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: 'rgba(200, 200, 200, .2)' }}>
           <InfoArea
-            title="Profile Platforms"
+            title="Profile Websites"
             description="Enter Your Email & Password On the Sites Where That Profile Exists"
             icon={Web}
             iconColor="primary"
           />
         </ItemGrid>
-        <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: '#ffffcc' }}>
+        <ItemGrid xs={12} sm={12} md={3} style={{ backgroundColor: 'rgba(200, 200, 200, .2)' }}>
           <InfoArea
-            title="Get Portable Ratings & Reviews"
+            title="Get Portable Reputation"
             description="We Merge, Normalize & Decentrally Store Your Ratings & Reviews So You Can Take them to Any Website"
             icon={StarHalf}
             iconColor="info"
@@ -146,165 +145,149 @@ class Step3 extends React.Component {
                     <span>
                     <form onSubmit={this.testSubmit}>
                       <GridContainer>
-                        <ItemGrid xs={12} sm={2}>
+                        <ItemGrid xs={12} sm={12} md={2}>
                           <FormLabel className={classes.labelHorizontal}>
                             Linkedin Email
                           </FormLabel>
                         </ItemGrid>
-                        <ItemGrid xs={12} sm={10}>
-                          <GridContainer>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md3"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your LinkedIn email"
-                              />
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={2}>
-                              <FormLabel className={classes.labelHorizontal}>
-                                Linkedin Password
-                              </FormLabel>
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md5"
-                                ref="password"
-                                type="password"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your LinkedIn password"
-                              />
-                            </ItemGrid>
-                          </GridContainer>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md3"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your LinkedIn email"
+                          />
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={2}>
+                          <FormLabel className={classes.labelHorizontal}>
+                            Linkedin Password
+                          </FormLabel>
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md5"
+                            ref="password"
+                            type="password"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your LinkedIn password"
+                          />
                         </ItemGrid>
                       </GridContainer>
                       <GridContainer>
-                        <ItemGrid xs={12} sm={2}>
+                        <ItemGrid xs={12} sm={12} md={2}>
                           <FormLabel className={classes.labelHorizontal}>
                             UpWork Email
                           </FormLabel>
                         </ItemGrid>
-                        <ItemGrid xs={12} sm={10}>
-                          <GridContainer>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md3"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your UpWork email"
-                              />
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={2}>
-                              <FormLabel className={classes.labelHorizontal}>
-                                UpWork Password
-                              </FormLabel>
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md5"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your UpWork password"
-                              />
-                            </ItemGrid>
-                          </GridContainer>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md3"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your UpWork email"
+                          />
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={2}>
+                          <FormLabel className={classes.labelHorizontal}>
+                            UpWork Password
+                          </FormLabel>
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md5"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your UpWork password"
+                          />
                         </ItemGrid>
                       </GridContainer>
                       <GridContainer>
-                        <ItemGrid xs={12} sm={2}>
+                        <ItemGrid xs={12} sm={12} md={2}>
                           <FormLabel className={classes.labelHorizontal}>
                             Fiverr Email
                           </FormLabel>
                         </ItemGrid>
-                        <ItemGrid xs={12} sm={10}>
-                          <GridContainer>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md3"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your Fiverr email"
-                              />
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={2}>
-                              <FormLabel className={classes.labelHorizontal}>
-                                Fiverr Password
-                              </FormLabel>
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md5"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your Fiverr password"
-                              />
-                            </ItemGrid>
-                          </GridContainer>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md3"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your Fiverr email"
+                          />
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={2}>
+                          <FormLabel className={classes.labelHorizontal}>
+                            Fiverr Password
+                          </FormLabel>
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md5"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your Fiverr password"
+                          />
                         </ItemGrid>
                       </GridContainer>
                       <GridContainer>
-                        <ItemGrid xs={12} sm={2}>
+                        <ItemGrid xs={12} sm={12} md={2}>
                           <FormLabel className={classes.labelHorizontal}>
                             Flexhire Email
                           </FormLabel>
                         </ItemGrid>
-                        <ItemGrid xs={12} sm={10}>
-                          <GridContainer>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md3"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your Flexhire email"
-                              />
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={2}>
-                              <FormLabel className={classes.labelHorizontal}>
-                                Flexhire Password
-                              </FormLabel>
-                            </ItemGrid>
-                            <ItemGrid xs={12} sm={12} md={4}>
-                              <CustomInput
-                                id="md5"
-                                formControlProps={{
-                                  fullWidth: true
-                                }}
-                                inputProps={{
-                                  placeholder: ""
-                                }}
-                                helpText="We never store your Flexhire password"
-                              />
-                            </ItemGrid>
-                          </GridContainer>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md3"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your Flexhire email"
+                          />
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={2}>
+                          <FormLabel className={classes.labelHorizontal}>
+                            Flexhire Password
+                          </FormLabel>
+                        </ItemGrid>
+                        <ItemGrid xs={12} sm={12} md={3}>
+                          <CustomInput
+                            id="md5"
+                            formControlProps={{
+                              fullWidth: true
+                            }}
+                            inputProps={{
+                              placeholder: ""
+                            }}
+                            helpText="We never store your Flexhire password"
+                          />
                         </ItemGrid>
                       </GridContainer>
                       </form>
@@ -323,83 +306,75 @@ class Step3 extends React.Component {
                   content={
                     <span>
                     <GridContainer>
-                      <ItemGrid xs={12} sm={2}>
+                      <ItemGrid xs={12} sm={12} md={2}>
                         <FormLabel className={classes.labelHorizontal}>
                           Yelp Email
                         </FormLabel>
                       </ItemGrid>
-                      <ItemGrid xs={12} sm={10}>
-                        <GridContainer>
-                          <ItemGrid xs={12} sm={12} md={4}>
-                            <CustomInput
-                              id="md3"
-                              formControlProps={{
-                                fullWidth: true
-                              }}
-                              inputProps={{
-                                placeholder: ""
-                              }}
-                              helpText="We never store your Yelp email"
-                            />
-                          </ItemGrid>
-                          <ItemGrid xs={12} sm={2}>
-                            <FormLabel className={classes.labelHorizontal}>
-                              Yelp Password
-                            </FormLabel>
-                          </ItemGrid>
-                          <ItemGrid xs={12} sm={12} md={4}>
-                            <CustomInput
-                              id="md5"
-                              formControlProps={{
-                                fullWidth: true
-                              }}
-                              inputProps={{
-                                placeholder: ""
-                              }}
-                              helpText="We never store your Yelp password"
-                            />
-                          </ItemGrid>
-                        </GridContainer>
+                      <ItemGrid xs={12} sm={12} md={3}>
+                        <CustomInput
+                          id="md3"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          inputProps={{
+                            placeholder: ""
+                          }}
+                          helpText="We never store your Yelp email"
+                        />
+                      </ItemGrid>
+                      <ItemGrid xs={12} sm={12} md={2}>
+                        <FormLabel className={classes.labelHorizontal}>
+                          Yelp Password
+                        </FormLabel>
+                      </ItemGrid>
+                      <ItemGrid xs={12} sm={12} md={3}>
+                        <CustomInput
+                          id="md5"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          inputProps={{
+                            placeholder: ""
+                          }}
+                          helpText="We never store your Yelp password"
+                        />
                       </ItemGrid>
                     </GridContainer>
                     <GridContainer>
-                      <ItemGrid xs={12} sm={2}>
+                      <ItemGrid xs={12} sm={12} md={2}>
                         <FormLabel className={classes.labelHorizontal}>
                           TripAdvisor Email
                         </FormLabel>
                       </ItemGrid>
-                      <ItemGrid xs={12} sm={10}>
-                        <GridContainer>
-                          <ItemGrid xs={12} sm={12} md={4}>
-                            <CustomInput
-                              id="md3"
-                              formControlProps={{
-                                fullWidth: true
-                              }}
-                              inputProps={{
-                                placeholder: ""
-                              }}
-                              helpText="We never store your TripAdvisor email"
-                            />
-                          </ItemGrid>
-                          <ItemGrid xs={12} sm={2}>
-                            <FormLabel className={classes.labelHorizontal}>
-                              TripAdvisor Password
-                            </FormLabel>
-                          </ItemGrid>
-                          <ItemGrid xs={12} sm={12} md={4}>
-                            <CustomInput
-                              id="md5"
-                              formControlProps={{
-                                fullWidth: true
-                              }}
-                              inputProps={{
-                                placeholder: ""
-                              }}
-                              helpText="We never store your TripAdvisor password"
-                            />
-                          </ItemGrid>
-                        </GridContainer>
+                      <ItemGrid xs={12} sm={12} md={3}>
+                        <CustomInput
+                          id="md3"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          inputProps={{
+                            placeholder: ""
+                          }}
+                          helpText="We never store your TripAdvisor email"
+                        />
+                      </ItemGrid>
+                      <ItemGrid xs={12} sm={12} md={2}>
+                        <FormLabel className={classes.labelHorizontal}>
+                          TripAdvisor Password
+                        </FormLabel>
+                      </ItemGrid>
+                      <ItemGrid xs={12} sm={12} md={3}>
+                        <CustomInput
+                          id="md5"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          inputProps={{
+                            placeholder: ""
+                          }}
+                          helpText="We never store your TripAdvisor password"
+                        />
                       </ItemGrid>
                     </GridContainer>
                     </span>
