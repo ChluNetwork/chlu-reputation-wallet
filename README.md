@@ -1,251 +1,111 @@
-# [Material Dashboard PRO React - Premium Material-UI Design Admin](https://creativetimofficial.github.io/material-dashboard-pro-react/#/dashboard)
-[![version][version-badge]][CHANGELOG]
+## What is Chlu?
 
-![alt text](https://s3.amazonaws.com/creativetim_bucket/products/80/original/opt_mdpr_thumbnail.jpg "Material Dashboard PRO React")
+Chlu is a decentralised reputation system.
 
-Material Dashboard PRO React is a Premium Material-UI Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard PRO React was built over the popular Material-UI framework.
+Vendor reputation is backed by payments received via cryptocurrencies.
 
-Material Dashboard PRO React makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+Vendors completely control who can access their reputation data, and
+marketplaces can not limit access to a vendor's data.
 
-Material Dashboard PRO React comes with 7 color filter choices for the links of the Sidebar (`blue`, `green`, `orange`, `red`, `purple`, `rose`, `white`), 3 filter color choices for background of the Sidebar (`white`, `blue`, `black`), an option to have a background image on the Sidebar and 6 color filter choices the card headers (`blue`, `green`, `orange`, `red`, `purple`, `rose`).
+Chlu supports payments with any cryptocurrencies as long there are
+wallets for that cryptocurrency with support for Chlu.
 
-Material Dashboard PRO React uses a framework built by our friend [Olivier - Material-UI](https://github.com/mui-org/material-ui), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
+### How does Chlu work?
 
-Special thanks go to:
-+ [Perfect-scrollbar](https://github.com/utatti/perfect-scrollbar) for the slim and beautiful scrollbars.
-+ [React-chartist](https://github.com/fraserxu/react-chartist) for the wonderful charts.
-+ [React-datetime](https://github.com/YouCanBookMe/react-datetime) for the easy to use date and time pickers.
-+ [React-big-calendar](https://github.com/intljusticemission/react-big-calendar) for the a wonderful calendar.
-+ [React-bootstrap-sweetalert](https://github.com/djorg83/react-bootstrap-sweetalert) for the wonderful alerts.
-+ [React-google-maps](https://github.com/tomchentw/react-google-maps) for the nice and easy to use map components.
-+ [React-jvectormap](https://github.com/kadoshms/react-jvectormap) for the nice vector map components.
-+ [React-nouislider](https://github.com/algolia/react-nouislider) for the nice and clean slider.
-+ [React-tables](https://react-table.js.org/#/story/simple-table) for the nice and clean slider.
-+ [React-tagsinput](https://github.com/olahol/react-tagsinput) for the easy and beatiful to use tags components.
+Chlu enables paying customers to leave reviews and ratings for
+vendors. The reviews and ratings are saved on IPFS and vendors remain
+in complete control of their reputation data. Vendors can choose to
+publicly share them with anyone, or selectively share them with
+marketplaces where they sell their services and products.
 
-## Links:
+The position paper on https://chlu.io has more details.
 
-+ [Live Preview](https://creativetimofficial.github.io/material-dashboard-pro-react/#/dashboard)
-+ [Material Dashboard Free React]((https://creativetimofficial.github.io/material-dashboard-react/)
-+ [Material Dashboard PRO BS4 Html](https://demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html)
-+ [Material Dashboard PRO BS3 Html](https://demos.creative-tim.com/bs3/material-dashboard-pro/examples/dashboard.html)
-+ [Material Dashboard Free Html](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
-+ [Material Dashboard PRO Angular](https://md-pro-angular.creative-tim.com/dashboard)
-+ [Material Dashboard Free Angular](http://md-angular2.creative-tim.com/dashboard)
+### Who runs Chlu?
 
-## Quick Start:
+Short answer - no one. But there is a team developing the protocols
+and reference open source implementations of the wallets and services.
 
-Quick start options:
+There is no smart contract that any one organisation controls.
 
-+ [Download from Creative Tim](https://www.creative-tim.com/product/material-dashboard-pro-react).
+## What are Chlu protocols?
 
-Other Products:
+Chlu requires customer and vendor wallets to provide functionality
+that enables customers and vendors to leave reviews, edit them later
+and share them if they want to.
 
-+ [Download HTML PRO BS4 Version](https://www.creative-tim.com/product/material-dashboard-pro).
-+ [Download HTML PRO BS3 Version](https://www.creative-tim.com/product/material-dashboard-pro-bs3).
-+ [Download Angular PRO Version](https://www.creative-tim.com/product/material-dashboard-pro-angular2).
-+ [Download React Free Version](https://www.creative-tim.com/product/material-dashboard-react).
-+ [Download HTML Free Version](https://www.creative-tim.com/product/material-dashboard).
-+ [Download Angular Free Version](https://www.creative-tim.com/product/material-dashboard-angular2).
+The Chlu protocol specifies the behaviours that wallet providers need
+to build to provide support for Chlu reputation on their wallet. The
+protocol specifies the format of messages and when and how the
+messages are to be exchanged, where the data is to be saved and how
+this data should be interpreted by wallets.
 
-## Terminal Commands
+## Can anyone create a wallet?
 
-1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
-2. Open Terminal
-3. Go to your file project
-4. Run in terminal: ```npm install```
-5. Then: ```npm start```
-6. Navigate to `http://localhost:3000/`
-7. (optional) Run in terminal `npm i -g cross-env`
+Yes, any wallet can support the Chlu reputation platform by providing
+support for the Chlu protocols specified in this repository.
 
-### What's included
+## Contribution
 
-Within the download you'll find the following directories and files:
+To contribute to our reference open source implementation of wallets,
+please create an issue in this repository and/or a pull request with
+associated changes.
 
-```
-material-dashboard-pro-react
-│
-├── README.md
-├── CHANGELOG.md
-├── .env
-├── package.json
-├── documentation
-│   ├── assets
-│   └── tutorial-components.html
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   └── manifest.json
-└── src
-    ├── assets
-    │   ├── img
-    │   │   ├── faces
-    │   │   └── flags
-    │   ├── jss
-    │   │   ├── material-dashboard-pro-react
-    │   │   │   ├── components
-    │   │   │   ├── layouts
-    │   │   │   └── views
-    │   │   └── material-dashboard-pro-react.jsx
-    │   └── scss
-    │       ├── material-dashboard-pro-react
-    │       │   ├── mixins
-    │       │   └── plugins
-    │       └── material-dashboard-pro-react.scss
-    ├── components
-    │   ├── Accordion
-    │   │   └── Accordion.jsx
-    │   ├── Badge
-    │   │   └── Badge.jsx
-    │   ├── Cards
-    │   │   ├── ChartCard.jsx
-    │   │   ├── FullHeaderCard.jsx
-    │   │   ├── HeaderCard.jsx
-    │   │   ├── IconCard.jsx
-    │   │   ├── ImagePriceCard.jsx
-    │   │   ├── LoginCard.jsx
-    │   │   ├── PricingCard.jsx
-    │   │   ├── ProfileCard.jsx
-    │   │   ├── RegularCard.jsx
-    │   │   ├── StatsCard.jsx
-    │   │   ├── TasksCard.jsx
-    │   │   └── TestimonialCard.jsx
-    │   ├── Clearfix
-    │   │   └── Clearfix.jsx
-    │   ├── CustomButtons
-    │   │   ├── Button.jsx
-    │   │   └── IconButton.jsx
-    │   ├── CustomDropdown
-    │   │   └── CustomDropdown.jsx
-    │   ├── CustomInput
-    │   │   └── CustomInput.jsx
-    │   ├── CustomLinearProgress
-    │   │   └── CustomLinearProgress.jsx
-    │   ├── CustomUpload
-    │   │   ├── ImageUpload.jsx
-    │   │   └── PictureUpload.jsx
-    │   ├── Footer
-    │   │   └── Footer.jsx
-    │   ├── Grid
-    │   │   ├── GridContainer.jsx
-    │   │   └── ItemGrid.jsx
-    │   ├── Header
-    │   │   ├── Header.jsx
-    │   │   ├── HeaderLinks.jsx
-    │   │   └── PagesHeader.jsx
-    │   ├── Heading
-    │   │   └── Heading.jsx
-    │   ├── InfoArea
-    │   │   └── InfoArea.jsx
-    │   ├── Instruction
-    │   │   └── Instruction.jsx
-    │   ├── NavPills
-    │   │   └── NavPills.jsx
-    │   ├── Pagination
-    │   │   └── Pagination.jsx
-    │   ├── Sidebar
-    │   │   └── Sidebar.jsx
-    │   ├── Snackbar
-    │   │   ├── Snackbar.jsx
-    │   │   └── SnackbarContent.jsx
-    │   ├── Table
-    │   │   └── Table.jsx
-    │   ├── Tasks
-    │   │   └── Tasks.jsx
-    │   ├── Timeline
-    │   │   └── Timeline.jsx
-    │   ├── Typography
-    │   │   ├── A.jsx
-    │   │   ├── Danger.jsx
-    │   │   ├── Info.jsx
-    │   │   ├── Muted.jsx
-    │   │   ├── P.jsx
-    │   │   ├── Primary.jsx
-    │   │   ├── Quote.jsx
-    │   │   ├── Small.jsx
-    │   │   ├── Success.jsx
-    │   │   └── Warning.jsx
-    │   └── Wizard
-    │       └── Wizard.jsx
-    ├── index.js
-    ├── layouts
-    │   ├── Dashboard.jsx
-    │   ├── Pages.jsx
-    │   └── RTL.jsx
-    ├── routes
-    │   ├── dashboard.jsx
-    │   ├── index.jsx
-    │   ├── pages.jsx
-    │   └── rtl.jsx
-    ├── variables
-    │   ├── charts.jsx
-    │   └── general.jsx
-    └── views
-        ├── Calendar
-        │   └── Calendar.jsx
-        ├── Charts
-        │   └── Charts.jsx
-        ├── Components
-        │   ├── Buttons.jsx
-        │   ├── GridSystem.jsx
-        │   ├── Icons.jsx
-        │   ├── Notifications.jsx
-        │   ├── Panels.jsx
-        │   ├── SweetAlert.jsx
-        │   └── Typography.jsx
-        ├── Dashboard
-        │   └── Dashboard.jsx
-        ├── Forms
-        │   ├── ExtendedForms.jsx
-        │   ├── RegularForms.jsx
-        │   ├── ValidationForms.jsx
-        │   ├── Wizard.jsx
-        │   └── WizardSteps
-        │       ├── Step1.jsx
-        │       ├── Step2.jsx
-        │       └── Step3.jsx
-        ├── Maps
-        │   ├── FullScreenMap.jsx
-        │   ├── GoogleMaps.jsx
-        │   └── VectorMap.jsx
-        ├── Pages
-        │   ├── LockScreenPage.jsx
-        │   ├── LoginPage.jsx
-        │   ├── PricingPage.jsx
-        │   ├── RTLSupport.jsx
-        │   ├── RegisterPage.jsx
-        │   ├── Timeline.jsx
-        │   └── UserProfile.jsx
-        ├── Tables
-        │   ├── DataTables.jsx
-        │   ├── ExtendedTables.jsx
-        │   └── RegularTables.jsx
-        └── Widgets
-            └── Widgets.jsx
+To make suggestions for improving the Chlu protocol, please go to our
+[protocol repository](https://github.com/ChluNetwork/chlu-protocol)
+
+## Install
+
+The customer wallet was setup using create-react-app
+
+- `cd customer-wallet`
+- copy `.env.example` to create a `.env` file. Fill in the API keys for blockcypher. We will eventually move off blockcypher, but for now we are using a third part API to push transactions
+- `yarn` to install dependencies
+- `yarn start` to run a development server
+- `yarn build` to make a production build
+
+## Test & Demo
+
+### Set up marketplace
+
+To work, the Demo requires a Chlu marketplace instance.
+
+- clone and configure [chlu-marketplace-js](https://github.com/ChluNetwork/chlu-marketplace-js)
+- in the config file, set it for example on port `4000` and set up the marketplace URL to `http://localhost:4000`
+- make sure it is reachable using a command like `curl http://localhost:4000`
+- run `node src/bin/ setup-vendor -u http://localhost:4000` to set up a test vendor on your marketplace
+- if there were no errors, try running `curl http://localhost:4000/vendors` and you should get an array with one string, that's your vendor ID. Copy it
+- set that vendor ID as the `REACT_APP_VENDOR_ID` variable in your `.env`
+- set the `REACT_APP_MARKETPLACE_URL` variable in your `.env` to `http://localhost:4000` which is your marketplace URL.
+
+__Note:__ make sure your marketplace is running on the same chlu network as the Demo.
+
+By default, in development, the demo runs on experimental but the marketplace binary runs on staging.
+
+Add this to your `config.json` for the marketplace:
+
+```json
+"chluIpfs": {
+    "network": "experimental"
+}
 ```
 
-## Useful Links
+Your marketplace should now run on the `experimental` network, like the demo does in development.
 
-More products from Creative Tim: <https://www.creative-tim.com/bootstrap-themes>
+### Customer wallet
 
-Tutorials: <https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w>
+Use mnemonic `alter ankle cart harvest ecology sign athlete congress desert scare planet love` and you should get the address
+`mjw2BcBvNKkgLvQyYhzRERRgWSUVG7HHTb`.
 
-Freebies: <https://www.creative-tim.com/products>
+That wallet has some BTC on testnet, so feel free to use a bit of it ;)
 
-Affiliate Program (earn money): <https://www.creative-tim.com/affiliates/new>
+### Vendor demo address
 
-Social Media:
+Use the address `ms4TpM57RWHnEq5PRFtfJ8bcdiXoUE3tfv` to send payments to. It has some reviews already there.
 
-Twitter: <https://twitter.com/CreativeTim>
+If you want to build your own wallet or integrate Chlu into your
+project, check out the libraries used by the demo:
 
-Facebook: <https://www.facebook.com/CreativeTim>
+- [chlu-ipfs-support](https://github.com/ChluNetwork/chlu-ipfs-support)
+- [chlu-wallet-support-js](https://github.com/ChluNetwork/chlu-wallet-support-js)
 
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
-
-[CHANGELOG]: ./CHANGELOG.md
-
-[version-badge]: https://img.shields.io/badge/version-1.1.1-blue.svg
+The libraries are still in development
