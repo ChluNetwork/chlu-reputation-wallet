@@ -180,7 +180,7 @@ const sidebarStyle = theme => ({
     left: "0",
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    transition: "all 300ms linear",
+    transition: "all 300ms linear"
   },
   list: {
     marginTop: "15px",
@@ -367,7 +367,7 @@ const sidebarStyle = theme => ({
     borderLeft: "4px solid transparent"
   },
   userCaret: {
-    marginTop: "10px",
+    marginTop: "10px"
   },
   caretRTL: {
     left: "11px",
@@ -380,7 +380,7 @@ const sidebarStyle = theme => ({
     "&,&:hover,&:focus": {
       color: "#FFFFFF",
       backgroundColor: primaryColor,
-      ...primaryBoxShadow,
+      ...primaryBoxShadow
     }
   },
   blue: {
@@ -388,7 +388,7 @@ const sidebarStyle = theme => ({
       color: "#FFFFFF",
       backgroundColor: infoColor,
       boxShadow:
-        "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)",
+        "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)"
     }
   },
   green: {
@@ -396,7 +396,7 @@ const sidebarStyle = theme => ({
       color: "#FFFFFF",
       backgroundColor: successColor,
       boxShadow:
-        "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)",
+        "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)"
     }
   },
   orange: {
@@ -404,7 +404,7 @@ const sidebarStyle = theme => ({
       color: "#FFFFFF",
       backgroundColor: warningColor,
       boxShadow:
-        "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)",
+        "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)"
     }
   },
   red: {
@@ -412,7 +412,7 @@ const sidebarStyle = theme => ({
       color: "#FFFFFF",
       backgroundColor: dangerColor,
       boxShadow:
-        "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)",
+        "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)"
     }
   },
   white: {
@@ -420,15 +420,16 @@ const sidebarStyle = theme => ({
       color: "#3C4858",
       backgroundColor: "#FFFFFF",
       boxShadow:
-        "0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(60,72,88,.4)",
+        "0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(60,72,88,.4)"
     }
   },
   rose: {
     "&,&:hover,&:focus": {
       color: "#FFFFFF",
       backgroundColor: roseColor,
-      boxShadow: "0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(233,30,99,.4)",
-    },
+      boxShadow:
+        "0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(233,30,99,.4)"
+    }
   },
   sidebarWrapper: {
     position: "relative",

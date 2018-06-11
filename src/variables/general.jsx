@@ -1,11 +1,6 @@
 import React from "react";
 
 // @material-ui/icons
-import CardTravel from "@material-ui/icons/CardTravel";
-import Extension from "@material-ui/icons/Extension";
-import Fingerprint from "@material-ui/icons/Fingerprint";
-import FlightLand from "@material-ui/icons/FlightLand";
-import Build from "@material-ui/icons/Build";
 import StarHalf from "@material-ui/icons/StarHalf"
 import Web from "@material-ui/icons/Web"
 import AccessTime from "@material-ui/icons/AccessTime"
@@ -13,10 +8,6 @@ import Lock from "@material-ui/icons/Lock"
 import Business from "@material-ui/icons/Business"
 import EuroSymbol from "@material-ui/icons/EuroSymbol"
 import VerifiedUser from "@material-ui/icons/VerifiedUser"
-
-// core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-
 
 // ##############################
 // // // stories for Timeline view

@@ -2,13 +2,13 @@ import React from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Table from "material-ui/Table";
-import TableBody from "material-ui/Table/TableBody";
-import TableCell from "material-ui/Table/TableCell";
-import TableHead from "material-ui/Table/TableHead";
-import TableRow from "material-ui/Table/TableRow";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
 
 import tableStyle from "assets/jss/material-dashboard-pro-react/components/tableStyle";
 
@@ -90,14 +90,12 @@ function CustomTable({ ...props }) {
                   >
                     {prop.amount}
                   </TableCell>
-                  {
-                    tableHead.length - (prop.colspan - 0 + 2) > 0 ? (
-                      <TableCell
-                        className={classes.tableCell}
-                        colSpan={tableHead.length - (prop.colspan - 0 + 2)}
-                      />
-                    ):null
-                  }
+                  {tableHead.length - (prop.colspan - 0 + 2) > 0 ? (
+                    <TableCell
+                      className={classes.tableCell}
+                      colSpan={tableHead.length - (prop.colspan - 0 + 2)}
+                    />
+                  ) : null}
                 </TableRow>
               );
             }
@@ -118,7 +116,11 @@ function CustomTable({ ...props }) {
               );
             }
             return (
-              <TableRow key={key} hover={hover} className={classes.tableRow + " " + tableRowClasses}>
+              <TableRow
+                key={key}
+                hover={hover}
+                className={classes.tableRow + " " + tableRowClasses}
+              >
                 {prop.map((prop, key) => {
                   const tableCellClasses =
                     classes.tableCell +
@@ -127,7 +129,7 @@ function CustomTable({ ...props }) {
                       [classes[colorsColls[coloredColls.indexOf(key)]]]:
                         coloredColls.indexOf(key) !== -1,
                       [customCellClasses[customClassesForCells.indexOf(key)]]:
-                        customClassesForCells.indexOf(key) !== -1,
+                        customClassesForCells.indexOf(key) !== -1
                     });
                   return (
                     <TableCell className={tableCellClasses} key={key}>

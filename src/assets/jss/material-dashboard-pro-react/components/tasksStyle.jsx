@@ -8,8 +8,10 @@ import {
   dangerColor,
   tooltip
 } from "assets/jss/material-dashboard-pro-react.jsx";
+import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
 
 const tasksStyle = {
+  ...customCheckboxRadioSwitch,
   table: {
     marginBottom: "0"
   },
@@ -47,22 +49,6 @@ const tasksStyle = {
     backgroundColor: "transparent",
     color: dangerColor,
     boxShadow: "none"
-  },
-  checked: {
-    color: primaryColor
-  },
-  checkedIcon: {
-    width: "20px",
-    height: "20px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "3px"
-  },
-  uncheckedIcon: {
-    width: "0px",
-    height: "0px",
-    padding: "9px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "3px"
   },
   tooltip
 };

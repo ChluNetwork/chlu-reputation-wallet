@@ -1,21 +1,23 @@
 import React from "react";
+// nodejs library that concatenates classes
 import classNames from "classnames";
+// nodejs library to set properties for components
 import PropTypes from "prop-types";
 import { Manager, Target, Popper } from "react-popper";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import MenuItem from "material-ui/Menu/MenuItem";
-import MenuList from "material-ui/Menu/MenuList";
-import ClickAwayListener from "material-ui/utils/ClickAwayListener";
-import Paper from "material-ui/Paper";
-import Grow from "material-ui/transitions/Grow";
-import Divider from "material-ui/Divider";
+import withStyles from "@material-ui/core/styles/withStyles";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Paper from "@material-ui/core/Paper";
+import Grow from "@material-ui/core/Grow";
+import Divider from "@material-ui/core/Divider";
 
 // core components
 import Button from "components/CustomButtons/Button.jsx";
 
-import customDropdownStyle from "assets/jss/material-dashboard-pro-react/components/customDropdownStyle";
+import customDropdownStyle from "assets/jss/material-dashboard-pro-react/components/customDropdownStyle.jsx";
 
 class CustomDropdown extends React.Component {
   constructor(props) {
@@ -36,33 +38,32 @@ class CustomDropdown extends React.Component {
     const { open } = this.state;
     const {
       classes,
-      buttonColor,
       buttonText,
       buttonIcon,
       dropdownList,
       buttonProps,
       dropup,
       dropdownHeader,
+      caret,
+      hoverColor,
+      left,
       rtlActive
     } = this.props;
-    const caretClasses =
-      classes.caret +
-      " " +
-      classNames({
-        [classes.caretActive]: open,
-        [classes.caretRTL]: rtlActive
-      });
-    const dropdownItem =
-      classes.dropdownItem +
-      " " +
-      classNames({
-        [classes.dropdownItemRTL]: rtlActive
-      });
+    const caretClasses = classNames({
+      [classes.caret]: true,
+      [classes.caretDropup]: dropup && !open,
+      [classes.caretActive]: open && !dropup,
+      [classes.caretRTL]: rtlActive
+    });
+    const dropdownItem = classNames({
+      [classes.dropdownItem]: true,
+      [classes[hoverColor + "Hover"]]: true,
+      [classes.dropdownItemRTL]: rtlActive
+    });
     return (
-      <Manager style={{ display: "inline-block" }}>
+      <Manager>
         <Target>
           <Button
-            color={buttonColor}
             aria-label="Notifications"
             aria-owns={open ? "menu-list" : null}
             aria-haspopup="true"
@@ -73,17 +74,20 @@ class CustomDropdown extends React.Component {
               <this.props.buttonIcon className={classes.buttonIcon} />
             ) : null}
             {buttonText !== undefined ? buttonText : null}
-            <b className={caretClasses} />
+            {caret ? <b className={caretClasses} /> : null}
           </Button>
         </Target>
         <Popper
-          placement={dropup ? "top-start" : "bottom-start"}
-          eventsEnabled={open}
-          className={
-            classNames({ [classes.popperClose]: !open }) +
-            " " +
-            classes.pooperResponsive
+          placement={
+            dropup
+              ? left ? "top-end" : "top-start"
+              : left ? "bottom-end" : "bottom-start"
           }
+          eventsEnabled={open}
+          className={classNames({
+            [classes.popperClose]: !open,
+            [classes.pooperResponsive]: true
+          })}
         >
           <ClickAwayListener onClickAway={this.handleClose}>
             <Grow
@@ -135,33 +139,23 @@ class CustomDropdown extends React.Component {
   }
 }
 
+CustomDropdown.defaultProps = {
+  caret: true,
+  hoverColor: "primary"
+};
+
 CustomDropdown.propTypes = {
   classes: PropTypes.object.isRequired,
-  buttonColor: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-    "defaultNoBackground",
-    "primaryNoBackground",
-    "infoNoBackground",
-    "successNoBackground",
-    "warningNoBackground",
-    "dangerNoBackground",
-    "roseNoBackground",
-    "white",
-    "simple",
-    "transparent"
-  ]),
+  hoverColor: PropTypes.oneOf(["primary", "black"]),
   buttonText: PropTypes.node,
   buttonIcon: PropTypes.func,
   dropdownList: PropTypes.array,
   buttonProps: PropTypes.object,
   dropup: PropTypes.bool,
   dropdownHeader: PropTypes.node,
-  rtlActive: PropTypes.bool
+  rtlActive: PropTypes.bool,
+  caret: PropTypes.bool,
+  left: PropTypes.bool
 };
 
 export default withStyles(customDropdownStyle)(CustomDropdown);

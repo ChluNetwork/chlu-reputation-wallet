@@ -5,15 +5,15 @@ import PerfectScrollbar from "perfect-scrollbar";
 import { NavLink } from "react-router-dom";
 import cx from "classnames";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Drawer from "material-ui/Drawer";
-import List from "material-ui/List";
-import ListItem from "material-ui/List/ListItem";
-import ListItemIcon from "material-ui/List/ListItemIcon";
-import ListItemText from "material-ui/List/ListItemText";
-import Hidden from "material-ui/Hidden";
-import Collapse from "material-ui/transitions/Collapse";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Drawer from "@material-ui/core/Drawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Hidden from "@material-ui/core/Hidden";
+import Collapse from "@material-ui/core/Collapse";
 
 // core components
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
@@ -148,7 +148,9 @@ class Sidebar extends React.Component {
                 secondary={
                   <b
                     className={
-                      caret + " " + classes.userCaret +
+                      caret +
+                      " " +
+                      classes.userCaret +
                       " " +
                       (this.state.openAvatar ? classes.caretActive : "")
                     }
@@ -484,7 +486,15 @@ Sidebar.propTypes = {
   classes: PropTypes.object.isRequired,
   bgColor: PropTypes.oneOf(["white", "black", "blue"]),
   rtlActive: PropTypes.bool,
-  color: PropTypes.oneOf(["white", "red", "orange", "green", "blue", "purple", "rose"]),
+  color: PropTypes.oneOf([
+    "white",
+    "red",
+    "orange",
+    "green",
+    "blue",
+    "purple",
+    "rose"
+  ]),
   logo: PropTypes.string,
   logoText: PropTypes.string,
   image: PropTypes.string,

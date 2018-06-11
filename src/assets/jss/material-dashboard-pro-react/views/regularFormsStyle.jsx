@@ -2,10 +2,16 @@
 // // // RegularForms view styles
 // #############################
 
+import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
 
 const regularFormsStyle = {
   ...customCheckboxRadioSwitch,
+  cardIconTitle: {
+    ...cardTitle,
+    marginTop: "15px",
+    marginBottom: "0px"
+  },
   staticFormGroup: {
     marginLeft: "0",
     marginRight: "0",
@@ -20,17 +26,12 @@ const regularFormsStyle = {
       clear: "both"
     }
   },
-  infoText: {
-    fontWeight: "300",
-    margin: "0px 0 0px",
-    textAlign: "center"
-  },
   staticFormControl: {
     marginBottom: "0",
     paddingTop: "8px",
     paddingBottom: "8px",
     minHeight: "34px"
-  },
+  }
 };
 
 export default regularFormsStyle;

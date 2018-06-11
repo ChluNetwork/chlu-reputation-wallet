@@ -39,36 +39,44 @@ class ImageUpload extends React.Component {
     // you have to call it yourself
   }
   handleClick() {
-    var input = document.createElement("input");
-    input.type = "file";
-    input.onchange = this.handleImageChange;
-    input.click();
+    this.refs.fileInput.click();
   }
   handleRemove() {
     this.setState({
       file: null,
       imagePreviewUrl: this.props.avatar ? defaultAvatar : defaultImage
     });
+    this.refs.fileInput.value = null;
   }
   render() {
+    var {
+      avatar,
+      addButtonProps,
+      changeButtonProps,
+      removeButtonProps
+    } = this.props;
     return (
       <div className="fileinput text-center">
-        <div className={"thumbnail" + (this.props.avatar ? " img-circle" : "")}>
+        <input type="file" onChange={this.handleImageChange} ref="fileInput" />
+        <div className={"thumbnail" + (avatar ? " img-circle" : "")}>
           <img src={this.state.imagePreviewUrl} alt="..." />
         </div>
         <div>
           {this.state.file === null ? (
-            <Button round color="rose" onClick={() => this.handleClick()}>
-              {this.props.avatar ? "Add Photo" : "Select image"}
+            <Button {...addButtonProps} onClick={() => this.handleClick()}>
+              {avatar ? "Add Photo" : "Select image"}
             </Button>
           ) : (
             <span>
-              <Button round color="rose" onClick={() => this.handleClick()}>
+              <Button {...changeButtonProps} onClick={() => this.handleClick()}>
                 Change
               </Button>
-              {this.props.avatar ? <br /> : null}
-              <Button color="danger" round onClick={() => this.handleRemove()}>
-                <i className="fa fa-times" /> Remove
+              {avatar ? <br /> : null}
+              <Button
+                {...removeButtonProps}
+                onClick={() => this.handleRemove()}
+              >
+                <i className="fas fa-times" /> Remove
               </Button>
             </span>
           )}
@@ -79,7 +87,10 @@ class ImageUpload extends React.Component {
 }
 
 ImageUpload.propTypes = {
-  avatar: PropTypes.bool
+  avatar: PropTypes.bool,
+  addButtonProps: PropTypes.object,
+  changeButtonProps: PropTypes.object,
+  removeButtonProps: PropTypes.object
 };
 
 export default ImageUpload;

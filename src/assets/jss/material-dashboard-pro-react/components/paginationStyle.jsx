@@ -124,9 +124,9 @@ const paginationStyle = {
       color: "#777",
       cursor: "not-allowed",
       backgroundColor: "#fff",
-      borderColor: "#ddd",
-    },
-  },
+      borderColor: "#ddd"
+    }
+  }
 };
 
 export default paginationStyle;

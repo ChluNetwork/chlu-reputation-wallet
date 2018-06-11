@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Snack from "material-ui/Snackbar/SnackbarContent";
-import IconButton from "material-ui/IconButton";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Snack from "@material-ui/core/SnackbarContent";
+import IconButton from "@material-ui/core/IconButton";
 
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
@@ -49,7 +49,7 @@ function SnackbarContent({ ...props }) {
       }
       classes={{
         root: classes.root + " " + classes[color],
-        message: classes.message,
+        message: classes.message
       }}
       action={action}
     />

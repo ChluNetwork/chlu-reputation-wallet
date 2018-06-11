@@ -1,7 +1,3 @@
-// ##############################
-// // // CustomInput styles
-// #############################
-
 import {
   primaryColor,
   dangerColor,
@@ -12,97 +8,93 @@ import {
 const customInputStyle = {
   disabled: {
     "&:before": {
-      background: "transparent !important",
-      backgroundSize: "3px 1px !important",
-      backgroundImage:
-        "linear-gradient(to right, rgba(0, 0, 0, 0.23) 33%, transparent 0%) !important",
-      backgroundRepeat: "repeat-x !important",
-      backgroundPosition: "left top !important"
+      borderColor: "transparent !important"
     }
   },
   underline: {
-    "&:before": {
-      backgroundColor: "#D2D2D2",
-      height: "1px !important"
+    "&:hover:not($disabled):before,&:before": {
+      borderColor: "#D2D2D2 !important",
+      borderWidth: "1px !important"
     },
     "&:after": {
-      backgroundColor: primaryColor,
-      transition: "0.3s ease all"
+      borderColor: primaryColor
     }
   },
   underlineError: {
     "&:after": {
-      backgroundColor: dangerColor,
-      transition: "0.3s ease all"
-    },
-    "&:before": {
-      backgroundColor: dangerColor + "!important",
-      height: "2px !important"
+      borderColor: dangerColor
     }
   },
   underlineSuccess: {
     "&:after": {
-      backgroundColor: successColor,
-      transition: "0.3s ease all"
+      borderColor: successColor
     }
   },
   labelRoot: {
     ...defaultFont,
-    color: "#AAAAAA",
+    color: "#AAAAAA !important",
     fontWeight: "400",
     fontSize: "14px",
     lineHeight: "1.42857",
-    transition: "0.3s ease all"
+    top: "10px",
+    "& + $underline": {
+      marginTop: "0px"
+    }
   },
   labelRootError: {
-    color: dangerColor
+    color: dangerColor + " !important"
   },
   labelRootSuccess: {
-    color: successColor
+    color: successColor + " !important"
   },
   feedback: {
     position: "absolute",
-    top: "23px",
+    bottom: "3px",
     right: "0",
     zIndex: "2",
     display: "block",
-    width: "24px",
-    height: "24px",
+    width: "1em",
+    height: "1em",
     textAlign: "center",
     pointerEvents: "none"
   },
-  feedbackNoLabel: {
-    // top: "8px"
-  },
-  input: {
-    padding: "2px 0 0",
-    fontWeight: "400",
-    height: "36px",
-    fontSize: "14px",
-    lineHeight: "1.428571429",
-    color: "#555",
-    "&[rows]": {
-      height: "auto"
-    }
-  },
-  inputNoLabel: {
-    paddingTop: "18px"
-  },
-  inputRTL: {
-    textAlign: "right"
-  },
-  inputWithAdornment: {
-    paddingTop: "21px"
+  feedbackRight: {
+    marginRight: "22px"
   },
   formControl: {
-    paddingBottom: "10px",
-    position: "relative"
+    margin: "0 0 17px 0",
+    paddingTop: "27px",
+    position: "relative",
+    "& svg,& .fab,& .far,& .fal,& .fas": {
+      color: "#495057"
+    }
   },
-  labelWithAdornment: {
-    top: "3px"
+  whiteUnderline: {
+    "&:hover:not($disabled):before,&:before": {
+      backgroundColor: "#FFFFFF"
+    },
+    "&:after": {
+      backgroundColor: "#FFFFFF"
+    }
   },
-  feedbackAdorment: {
-    right: "22px"
+  input: {
+    color: "#495057",
+    "&,&::placeholder": {
+      fontSize: "14px",
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontWeight: "400",
+      lineHeight: "1.42857",
+      opacity: "1"
+    },
+    "&::placeholder": {
+      color: "#AAAAAA"
+    }
+  },
+  whiteInput: {
+    "&,&::placeholder": {
+      color: "#FFFFFF",
+      opacity: "1"
+    }
   }
 };
 

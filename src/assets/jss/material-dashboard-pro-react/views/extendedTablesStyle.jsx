@@ -1,11 +1,10 @@
-// ##############################
-// // // ExtendedTables view styles
-// #############################
-
 import buttonGroupStyle from "assets/jss/material-dashboard-pro-react/buttonGroupStyle.jsx";
-import { primaryColor } from "assets/jss/material-dashboard-pro-react.jsx";
+import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
+import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 
 const extendedTablesStyle = {
+  ...customCheckboxRadioSwitch,
+  ...buttonGroupStyle,
   right: {
     textAlign: "right"
   },
@@ -17,7 +16,10 @@ const extendedTablesStyle = {
   },
   actionButton: {
     margin: "0 0 0 5px",
-    padding: "5px"
+    padding: "5px",
+    "& svg": {
+      marginRight: "0px"
+    }
   },
   icon: {
     verticalAlign: "middle",
@@ -26,23 +28,6 @@ const extendedTablesStyle = {
     top: "-1px",
     position: "relative"
   },
-  checked: {
-    color: primaryColor
-  },
-  checkedIcon: {
-    width: "20px",
-    height: "20px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "3px"
-  },
-  uncheckedIcon: {
-    width: "0px",
-    height: "0px",
-    padding: "9px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "3px"
-  },
-  ...buttonGroupStyle,
   imgContainer: {
     width: "120px",
     maxHeight: "160px",
@@ -83,7 +68,7 @@ const extendedTablesStyle = {
   positionAbsolute: {
     position: "absolute",
     right: "0",
-    top: "0",
+    top: "0"
   },
   customFont: {
     fontSize: "16px !important"
@@ -92,6 +77,11 @@ const extendedTablesStyle = {
     width: "auto",
     height: "auto",
     minWidth: "auto"
+  },
+  cardIconTitle: {
+    ...cardTitle,
+    marginTop: "15px",
+    marginBottom: "0px"
   }
 };
 

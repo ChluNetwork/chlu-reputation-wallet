@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Button from 'material-ui/Button';
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Button from "@material-ui/core/Button";
 
 import paginationStyle from "assets/jss/material-dashboard-pro-react/components/paginationStyle.jsx";
 

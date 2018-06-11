@@ -41,10 +41,6 @@ const pagesHeaderStyle = theme => ({
   flex: {
     flex: 1
   },
-  logo: {
-    height: "80px",
-    width: "80px"
-  },
   title: {
     ...defaultFont,
     lineHeight: "30px",
@@ -188,8 +184,10 @@ const pagesHeaderStyle = theme => ({
     }
   },
   sidebarButton: {
-    color: "#FFFFFF",
-    top: "8px"
+    "&,&:hover,&:focus": {
+      color: "#FFFFFF",
+    },
+    top: "-2px"
   }
 });
 

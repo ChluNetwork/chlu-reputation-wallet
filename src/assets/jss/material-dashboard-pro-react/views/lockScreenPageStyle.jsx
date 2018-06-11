@@ -2,7 +2,10 @@
 // // // LockScreenPage view styles
 // #############################
 
+import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
+
 const lockScreenPageStyle = {
+  cardTitle,
   content: {
     paddingTop: "18vh",
     minHeight: "calc(100vh - 80px)",
@@ -24,7 +27,7 @@ const lockScreenPageStyle = {
     opacity: "0",
     transform: "translate3d(0, -60px, 0)"
   },
-  customCardAvatarClass: {
+  cardAvatar: {
     maxWidth: "90px",
     maxHeight: "90px",
     marginTop: "-45px"
@@ -32,6 +35,9 @@ const lockScreenPageStyle = {
   customCardFooterClass: {
     border: "none",
     paddingTop: "0"
+  },
+  justifyContentCenter: {
+    justifyContent: "center !important"
   }
 };
 

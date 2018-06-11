@@ -1,16 +1,18 @@
 import React from "react";
-import cx from "classnames";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// nodejs library to set properties for components
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Tab from "material-ui/Tabs/Tab";
-import Tabs from "material-ui/Tabs";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
-import ItemGrid from "components/Grid/ItemGrid.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 
 import navPillsStyle from "assets/jss/material-dashboard-pro-react/components/navPillsStyle.jsx";
 
@@ -36,19 +38,17 @@ class NavPills extends React.Component {
       horizontal,
       alignCenter
     } = this.props;
-    const flexContainerClasses =
-      classes.flexContainer +
-      " " +
-      cx({
-        [classes.horizontalDisplay]: horizontal !== undefined
-      });
+    const flexContainerClasses = classNames({
+      [classes.flexContainer]: true,
+      [classes.horizontalDisplay]: horizontal !== undefined
+    });
     const tabButtons = (
       <Tabs
         classes={{
           root: classes.root,
           fixed: classes.fixed,
           flexContainer: flexContainerClasses,
-          indicator: classes.displayNone,
+          indicator: classes.displayNone
         }}
         value={this.state.active}
         onChange={this.handleChange}
@@ -59,13 +59,11 @@ class NavPills extends React.Component {
           if (prop.tabIcon !== undefined) {
             icon["icon"] = <prop.tabIcon className={classes.tabIcon} />;
           }
-          const pillsClasses =
-            classes.pills +
-            " " +
-            cx({
-              [classes.horizontalPills]: horizontal !== undefined,
-              [classes.pillsWithIcons]: prop.tabIcon !== undefined
-            });
+          const pillsClasses = classNames({
+            [classes.pills]: true,
+            [classes.horizontalPills]: horizontal !== undefined,
+            [classes.pillsWithIcons]: prop.tabIcon !== undefined
+          });
           return (
             <Tab
               label={prop.tabButton}
@@ -75,7 +73,7 @@ class NavPills extends React.Component {
                 root: pillsClasses,
                 labelContainer: classes.labelContainer,
                 label: classes.label,
-                textColorInheritSelected: classes[color]
+                selected: classes[color]
               }}
             />
           );
@@ -101,8 +99,8 @@ class NavPills extends React.Component {
     );
     return horizontal !== undefined ? (
       <GridContainer>
-        <ItemGrid {...horizontal.tabsGrid}>{tabButtons}</ItemGrid>
-        <ItemGrid {...horizontal.contentGrid}>{tabContent}</ItemGrid>
+        <GridItem {...horizontal.tabsGrid}>{tabButtons}</GridItem>
+        <GridItem {...horizontal.contentGrid}>{tabContent}</GridItem>
       </GridContainer>
     ) : (
       <div>

@@ -1,8 +1,8 @@
 import React from "react";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Grid from "material-ui/Grid";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Grid from "@material-ui/core/Grid";
 
 const style = {
   grid: {
@@ -10,7 +10,7 @@ const style = {
   }
 };
 
-function ItemGrid({ ...props }) {
+function GridItem({ ...props }) {
   const { classes, children, className, ...rest } = props;
   return (
     <Grid item {...rest} className={classes.grid + " " + className}>
@@ -19,4 +19,4 @@ function ItemGrid({ ...props }) {
   );
 }
 
-export default withStyles(style)(ItemGrid);
+export default withStyles(style)(GridItem);

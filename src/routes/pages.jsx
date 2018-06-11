@@ -1,15 +1,9 @@
-import PricingPage from "views/Pages/PricingPage.jsx";
 import LoginPage from "views/Pages/LoginPage.jsx";
-import RegisterPage from "views/Pages/RegisterPage.jsx";
-import LockScreenPage from "views/Pages/LockScreenPage.jsx";
 import HomePage from "views/Pages/HomePage.jsx";
 
 // @material-ui/icons
 import PersonAdd from "@material-ui/icons/PersonAdd";
 import Fingerprint from "@material-ui/icons/Fingerprint";
-import MonetizationOn from "@material-ui/icons/MonetizationOn";
-import LockOpen from "@material-ui/icons/LockOpen";
-import Home from "@material-ui/icons/Home"
 import ExpandMore from "@material-ui/icons/ExpandMore"
 
 const pagesRoutes = [
@@ -35,7 +29,7 @@ const pagesRoutes = [
     short: "Learn",
     mini: "PP",
     icon: ExpandMore,
-    component: PricingPage
+    component: HomePage
   },
   {
     redirect: true,

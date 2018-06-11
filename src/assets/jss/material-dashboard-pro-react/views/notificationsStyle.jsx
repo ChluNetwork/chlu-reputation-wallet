@@ -5,7 +5,7 @@
 import { defaultFont } from "assets/jss/material-dashboard-pro-react.jsx";
 import modalStyle from "assets/jss/material-dashboard-pro-react/modalStyle.jsx";
 
-const notificationsStyle = {
+const notificationsStyle = theme => ({
   cardTitle: {
     marginTop: "0",
     marginBottom: "3px",
@@ -36,7 +36,7 @@ const notificationsStyle = {
   modalSectionTitle: {
     marginTop: "30px"
   },
-  ...modalStyle
-};
+  ...modalStyle(theme)
+});
 
 export default notificationsStyle;

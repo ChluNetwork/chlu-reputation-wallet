@@ -1,22 +1,19 @@
 import React from "react";
 
 import Face from "@material-ui/icons/Face";
-import RecordVoiceOver from "@material-ui/icons/RecordVoiceOver";
 import Email from "@material-ui/icons/Email";
-import Checkbox from "material-ui/Checkbox";
-import FormControlLabel from "material-ui/Form/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Check from "@material-ui/icons/Check";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import InputAdornment from "material-ui/Input/InputAdornment";
+import withStyles from "@material-ui/core/styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
-import ItemGrid from "components/Grid/ItemGrid.jsx";
-import PictureUpload from "components/CustomUpload/PictureUpload.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
-import Button from "components/CustomButtons/Button.jsx";
 
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
 import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
@@ -92,7 +89,7 @@ class Step1 extends React.Component {
     const { classes } = this.props;
     return (
     <GridContainer justify="center">
-      <ItemGrid xs={12} sm={12} md={6}>
+      <GridItem xs={12} sm={12} md={6}>
         <form action="/myreputation" className={classes.form} onSubmit={this.testSubmit}>
         <CustomInput
           success={this.state.usernameState === "success"}
@@ -162,7 +159,7 @@ class Step1 extends React.Component {
             }
           />
         </form>
-      </ItemGrid>
+      </GridItem>
     </GridContainer>
     );
   }

@@ -1,12 +1,18 @@
-// ##############################
-// // // CustomSelects styles
-// #############################
-
-import { primaryColor, primaryBoxShadow } from "assets/jss/material-dashboard-pro-react.jsx";
+import {
+  primaryColor,
+  primaryBoxShadow
+} from "assets/jss/material-dashboard-pro-react.jsx";
 
 const customSelectStyle = {
   select: {
     padding: "12px 0 7px",
+    fontSize: ".75rem",
+    fontWeight: "400",
+    lineHeight: "1.42857",
+    textDecoration: "none",
+    textTransform: "uppercase",
+    color: "#3C4858",
+    letterSpacing: "0",
     "&:focus": {
       backgroundColor: "transparent"
     },
@@ -18,13 +24,14 @@ const customSelectStyle = {
     }
   },
   selectFormControl: {
+    margin: "7px 1px 10px 0px !important",
     "& > div": {
       "&:before": {
-        backgroundColor: "#D2D2D2 !important",
-        height: "1px !important"
+        borderColor: "#D2D2D2 !important",
+        borderWidth: "1px !important"
       },
       "&:after": {
-        backgroundColor: primaryColor
+        borderColor: primaryColor
       }
     }
   },
@@ -35,21 +42,6 @@ const customSelectStyle = {
     top: "8px"
   },
   selectMenu: {
-    "& > div": {
-      boxSizing: "borderBox",
-      borderRadius: "4px",
-      padding: "0",
-      minWidth: "100%",
-      display: "block",
-      border: "0",
-      boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
-      backgroundClip: "padding-box",
-      margin: "2px 0 0",
-      fontSize: "14px",
-      textAlign: "left",
-      listStyle: "none",
-      backgroundColor: "transparent"
-    },
     "& > div > ul": {
       border: "0",
       padding: "5px 0",
@@ -64,6 +56,9 @@ const customSelectStyle = {
       listStyle: "none",
       backgroundColor: "#fff",
       backgroundClip: "padding-box"
+    },
+    "& > div + div": {
+      maxHeight: "266px !important"
     }
   },
   selectMenuItem: {
@@ -87,6 +82,22 @@ const customSelectStyle = {
   selectMenuItemSelected: {
     backgroundColor: primaryColor + "!important",
     color: "#FFFFFF"
+  },
+  selectPaper: {
+    boxSizing: "borderBox",
+    borderRadius: "4px",
+    padding: "0",
+    minWidth: "100%",
+    display: "block",
+    border: "0",
+    boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+    backgroundClip: "padding-box",
+    margin: "2px 0 0",
+    fontSize: "14px",
+    textAlign: "left",
+    listStyle: "none",
+    backgroundColor: "transparent",
+    maxHeight: "266px"
   }
 };
 

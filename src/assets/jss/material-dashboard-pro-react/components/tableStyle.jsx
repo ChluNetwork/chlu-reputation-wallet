@@ -56,7 +56,7 @@ const tableStyle = theme => ({
   },
   tableHeadCell: {
     color: "rgba(0, 0, 0, 0.87)",
-    border: "none !important",
+    border: "none !important"
   },
   tableCell: {
     ...defaultFont,
@@ -67,6 +67,10 @@ const tableStyle = theme => ({
     borderBottom: "none",
     borderTop: "1px solid #ddd",
     position: "relative",
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "24px",
+      minWidth: "32px",
+    }
   },
   tableCellTotal: {
     fontWeight: "500",
@@ -116,7 +120,7 @@ const tableStyle = theme => ({
     "&:hover": {
       backgroundColor: "#c4e3f3"
     }
-  },
+  }
 });
 
 export default tableStyle;

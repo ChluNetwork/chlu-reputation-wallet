@@ -38,13 +38,21 @@ const headerLinksStyle = theme => ({
     zIndex: "4",
     ...defaultFont,
     fontSize: "14px",
-    margin: "0!important"
+    margin: "0!important",
+    textTransform: "none"
   },
   buttonLink: {
     [theme.breakpoints.down("sm")]: {
       display: "flex",
-      marginLeft: "30px",
-      width: "auto"
+      margin: "5px 15px 0",
+      width: "auto",
+      height: "auto",
+      "& svg": {
+        width: "30px",
+        height: "24px",
+        marginRight: "19px",
+        marginLeft: "3px"
+      }
     }
   },
   searchButton: {
@@ -81,7 +89,7 @@ const headerLinksStyle = theme => ({
       position: "absolute",
       top: "5px",
       border: "1px solid #FFF",
-      right: "10px",
+      right: "5px",
       fontSize: "9px",
       background: dangerColor,
       color: "#FFFFFF",
@@ -163,25 +171,30 @@ const headerLinksStyle = theme => ({
       margin: "10px 15px 0",
       padding: "10px 15px",
       display: "block",
-      position: "relative",
+      position: "relative"
     }
   },
   labelRTL: {
     [theme.breakpoints.down("sm")]: {
       flexDirection: "row-reverse",
       justifyContent: "initial",
+      display: "flex"
     }
   },
   linksRTL: {
     [theme.breakpoints.down("sm")]: {
-      marginRight: "-5px",
-      marginLeft: "16px",
+      marginRight: "-5px !important",
+      marginLeft: "16px !important"
     }
   },
   managerClasses: {
     [theme.breakpoints.up("md")]: {
       display: "inline-block"
     }
+  },
+  headerLinksSvg: {
+    width: "20px !important",
+    height: "20px !important"
   }
 });
 

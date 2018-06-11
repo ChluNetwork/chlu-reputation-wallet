@@ -2,9 +2,23 @@
 // // // Modal component styles
 // #############################
 
-const modalStyle = {
+const modalStyle = theme => ({
+  modalRoot: {
+    overflow: "auto",
+    alignItems: "unset",
+    justifyContent: "unset"
+  },
   modal: {
-    borderRadius: "6px"
+    [theme.breakpoints.up("sm")]: {
+      maxWidth: "500px",
+      margin: "1.75rem auto"
+    },
+    borderRadius: "6px",
+    marginTop: "100px !important",
+    overflow: "visible",
+    maxHeight: "unset",
+    position: "relative",
+    height: "fit-content"
   },
   modalHeader: {
     borderBottom: "none",
@@ -42,7 +56,8 @@ const modalStyle = {
     paddingRight: "24px",
     paddingBottom: "16px",
     paddingLeft: "24px",
-    position: "relative"
+    position: "relative",
+    overflow: "visible"
   },
   modalFooter: {
     padding: "15px",
@@ -76,6 +91,6 @@ const modalStyle = {
     marginBottom: "0",
     marginLeft: "5px"
   }
-};
+});
 
 export default modalStyle;

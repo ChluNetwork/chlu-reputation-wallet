@@ -1,7 +1,7 @@
 /*!
 
  =========================================================
- * Material Dashboard PRO React - v1.1.1 based on Material Dashboard PRO - v1.2.0
+ * Material Dashboard PRO React - v1.2.0 based on Material Dashboard PRO - v1.2.1
  =========================================================
 
  * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -117,6 +117,7 @@ const roseBoxShadow = {
     "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4)"
 };
 
+// old card headers
 const orangeCardHeader = {
   background: "linear-gradient(60deg, #ffa726, #fb8c00)",
   ...warningBoxShadow
@@ -134,6 +135,27 @@ const blueCardHeader = {
   ...infoBoxShadow
 };
 const purpleCardHeader = {
+  background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
+  ...primaryBoxShadow
+};
+// new card headers
+const warningCardHeader = {
+  background: "linear-gradient(60deg, #ffa726, #fb8c00)",
+  ...warningBoxShadow
+};
+const successCardHeader = {
+  background: "linear-gradient(60deg, #66bb6a, #43a047)",
+  ...successBoxShadow
+};
+const dangerCardHeader = {
+  background: "linear-gradient(60deg, #ef5350, #e53935)",
+  ...dangerBoxShadow
+};
+const infoCardHeader = {
+  background: "linear-gradient(60deg, #26c6da, #00acc1)",
+  ...infoBoxShadow
+};
+const primaryCardHeader = {
   background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
   ...primaryBoxShadow
 };
@@ -192,6 +214,45 @@ const tooltip = {
   lineBreak: "auto"
 };
 
+const title = {
+  color: "#3C4858",
+  textDecoration: "none",
+  fontWeight: "300",
+  marginTop: "30px",
+  marginBottom: "25px",
+  minHeight: "32px",
+  fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+  "& small": {
+    color: "#777",
+    fontSize: "65%",
+    fontWeight: "400",
+    lineHeight: "1"
+  }
+};
+
+const cardTitle = {
+  ...title,
+  marginTop: "0",
+  marginBottom: "3px",
+  minHeight: "auto",
+  "& a": {
+    ...title,
+    marginTop: ".625rem",
+    marginBottom: "0.75rem",
+    minHeight: "auto"
+  }
+};
+
+const cardSubtitle = {
+  marginTop: "-.375rem"
+};
+
+const cardLink = {
+  "& + $cardLink": {
+    marginLeft: "1.25rem"
+  }
+};
+
 export {
   //variables
   drawerWidth,
@@ -215,14 +276,25 @@ export {
   warningBoxShadow,
   dangerBoxShadow,
   roseBoxShadow,
+  // old card header colors
   orangeCardHeader,
   greenCardHeader,
   redCardHeader,
   blueCardHeader,
   purpleCardHeader,
   roseCardHeader,
+  // new card header colors
+  warningCardHeader,
+  successCardHeader,
+  dangerCardHeader,
+  infoCardHeader,
+  primaryCardHeader,
   cardActions,
   cardHeader,
   defaultBoxShadow,
-  tooltip
+  tooltip,
+  title,
+  cardTitle,
+  cardSubtitle,
+  cardLink
 };

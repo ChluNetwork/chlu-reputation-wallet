@@ -57,7 +57,17 @@ const customDropdownStyle = theme => ({
     fontWeight: "400",
     height: "fit-content",
     color: "#333",
-    whiteSpace: "nowrap",
+    whiteSpace: "nowrap"
+  },
+  blackHover: {
+    "&:hover": {
+      boxShadow:
+        "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(33, 33, 33, 0.4)",
+      backgroundColor: "#212121",
+      color: "#fff"
+    }
+  },
+  primaryHover: {
     "&:hover": {
       backgroundColor: primaryColor,
       color: "#FFFFFF",
@@ -74,8 +84,8 @@ const customDropdownStyle = theme => ({
     overflow: "hidden"
   },
   buttonIcon: {
-    width: "17px",
-    height: "17px"
+    width: "20px",
+    height: "20px"
   },
   caret: {
     transition: "all 150ms ease-in",
@@ -91,16 +101,21 @@ const customDropdownStyle = theme => ({
   caretActive: {
     transform: "rotate(180deg)"
   },
+  caretDropup: {
+    transform: "rotate(180deg)"
+  },
   caretRTL: {
     marginRight: "4px"
   },
   dropdownHeader: {
     display: "block",
-    padding: "3px 20px",
-    fontSize: "12px",
-    lineHeight: "1.42857143",
+    padding: "0.1875rem 1.25rem",
+    fontSize: "0.75rem",
+    lineHeight: "1.428571",
     color: "#777",
     whiteSpace: "nowrap",
+    fontWeight: "inherit",
+    marginTop: "10px",
     "&:hover,&:focus": {
       backgroundColor: "transparent",
       cursor: "auto"

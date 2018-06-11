@@ -2,15 +2,14 @@ import React from "react";
 
 import Face from "@material-ui/icons/Face";
 import RecordVoiceOver from "@material-ui/icons/RecordVoiceOver";
-import Email from "@material-ui/icons/Email";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import InputAdornment from "material-ui/Input/InputAdornment";
+import withStyles from "@material-ui/core/styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
-import ItemGrid from "components/Grid/ItemGrid.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 import PictureUpload from "components/CustomUpload/PictureUpload.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
@@ -89,29 +88,29 @@ class Step2 extends React.Component {
     const { classes } = this.props;
     return (
       <GridContainer justify="center">
-      <ItemGrid xs={12} sm={12} md={8}>
+      <GridItem xs={12} sm={12} md={8}>
         <div>
           <h4>Your Decentralized Identifier</h4>
         </div>
         <div>
           <h6>Placeholder for actual DID</h6>
         </div>
-      </ItemGrid>
-        <ItemGrid xs={12} sm={4}>
+      </GridItem>
+        <GridItem xs={12} sm={4}>
           <Button color="success">
             Download Your Private Key
           </Button>
-        </ItemGrid>
-        <ItemGrid xs={12} sm={12}>
+        </GridItem>
+        <GridItem xs={12} sm={12}>
           <hr></hr>
           <h4 className={classes.infoText}>
             If You Would Like to Earn More Chlu Tokens, Become a Verified Reviewer By Adding Your Personal Information Below:
           </h4>
-        </ItemGrid>
-        <ItemGrid xs={12} sm={4}>
+        </GridItem>
+        <GridItem xs={12} sm={4}>
           <PictureUpload />
-        </ItemGrid>
-        <ItemGrid xs={12} sm={6}>
+        </GridItem>
+        <GridItem xs={12} sm={6}>
           <CustomInput
             success={this.state.firstnameState === "success"}
             error={this.state.firstnameState === "error"}
@@ -154,7 +153,7 @@ class Step2 extends React.Component {
               )
             }}
           />
-        </ItemGrid>
+        </GridItem>
 
       </GridContainer>
     );

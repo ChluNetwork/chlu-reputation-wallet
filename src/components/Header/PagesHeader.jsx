@@ -3,28 +3,29 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import AppBar from "material-ui/AppBar";
-import Toolbar from "material-ui/Toolbar";
-import IconButton from "material-ui/IconButton";
-import Button from "material-ui/Button";
-import Hidden from "material-ui/Hidden";
-import Drawer from "material-ui/Drawer";
-import List from "material-ui/List";
-import ListItem from "material-ui/List/ListItem";
-import ListItemIcon from "material-ui/List/ListItemIcon";
-import ListItemText from "material-ui/List/ListItemText";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Hidden from "@material-ui/core/Hidden";
+import Drawer from "@material-ui/core/Drawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Menu from "@material-ui/icons/Menu";
 
-import logo from "assets/img/chlu.svg";
+// core components
+import Button from "components/CustomButtons/Button";
 
 import pagesRoutes from "routes/pages.jsx";
 
 import pagesHeaderStyle from "assets/jss/material-dashboard-pro-react/components/pagesHeaderStyle.jsx";
+
+import logo from "assets/img/chlu.svg";
 
 class PagesHeader extends React.Component {
   constructor(props) {
@@ -40,6 +41,11 @@ class PagesHeader extends React.Component {
   activeRoute(routeName) {
     return this.props.location.pathname.indexOf(routeName) > -1 ? true : false;
   }
+  componentDidUpdate(e) {
+    if (e.history.location.pathname !== e.location.pathname) {
+      this.setState({open: false});
+    }
+  }
   render() {
     const { classes, color } = this.props;
     const appBarClasses = cx({
@@ -50,13 +56,13 @@ class PagesHeader extends React.Component {
         <ListItem className={classes.listItem}>
           <NavLink to={"/myreputation"} className={classes.navLink}>
             <ListItemIcon className={classes.listItemIcon}>
-            <Dashboard />
+              <Dashboard />
             </ListItemIcon>
             <ListItemText
               primary={"Dashboard"}
               disableTypography={true}
               className={classes.listItemText}
-              />
+            />
           </NavLink>
         </ListItem>
         {pagesRoutes.map((prop, key) => {
@@ -88,27 +94,29 @@ class PagesHeader extends React.Component {
     return (
       <AppBar position="static" className={classes.appBar + appBarClasses}>
         <Toolbar className={classes.container}>
-          <div className={classes.flex}>
-
-            <a href="/">
-              <img src={logo} alt="logo" className={classes.logo} />
-            </a>
-            <Button href="/" className={classes.title}>
-              Your Reputation Wallet
-            </Button>
-          </div>
+          <Hidden smDown implementation="css">
+            <div className={classes.flex}>
+              <a href="/">
+                <img src={logo} alt="logo" className={classes.logo} />
+              </a>
+              <Button href="/" className={classes.title}>
+                Your Reputation Wallet
+              </Button>
+            </div>
+          </Hidden>
           <Hidden smDown implementation="css">
             {list}
           </Hidden>
           <Hidden mdUp>
-            <IconButton
+            <Button
               className={classes.sidebarButton}
-              color="inherit"
+              color="transparent"
+              justIcon
               aria-label="open drawer"
               onClick={this.handleDrawerToggle}
             >
               <Menu />
-            </IconButton>
+            </Button>
           </Hidden>
           <Hidden mdUp implementation="css">
             <Hidden mdUp>

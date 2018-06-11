@@ -1,13 +1,14 @@
 import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// nodejs library to set properties for components
 import PropTypes from "prop-types";
-import cx from "classnames";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Button from "material-ui/Button";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Button from "@material-ui/core/Button";
 
-import buttonStyle from "assets/jss/material-dashboard-pro-react/components/buttonStyle";
-
+import buttonStyle from "assets/jss/material-dashboard-pro-react/components/buttonStyle.jsx";
 function RegularButton({ ...props }) {
   const {
     classes,
@@ -16,26 +17,30 @@ function RegularButton({ ...props }) {
     children,
     fullWidth,
     disabled,
-    customClass,
-    right,
-    justIcon,
+    simple,
     size,
-    wd,
+    block,
+    link,
+    justIcon,
+    className,
+    muiClasses,
     ...rest
   } = props;
-  const btnClasses = cx({
+  const btnClasses = classNames({
+    [classes.button]: true,
+    [classes[size]]: size,
     [classes[color]]: color,
     [classes.round]: round,
     [classes.fullWidth]: fullWidth,
     [classes.disabled]: disabled,
-    [customClass]: customClass,
-    [classes.right]: right,
+    [classes.simple]: simple,
+    [classes.block]: block,
+    [classes.link]: link,
     [classes.justIcon]: justIcon,
-    [classes.wd]: wd,
-    [classes[size]]: size
+    [className]: className
   });
   return (
-    <Button {...rest} className={classes.button + " " + btnClasses}>
+    <Button {...rest} classes={muiClasses} className={btnClasses}>
       {children}
     </Button>
   );
@@ -50,50 +55,30 @@ RegularButton.propTypes = {
     "warning",
     "danger",
     "rose",
-    "defaultNoBackground",
-    "primaryNoBackground",
-    "infoNoBackground",
-    "successNoBackground",
-    "warningNoBackground",
-    "dangerNoBackground",
-    "roseNoBackground",
-    "twitter",
-    "twitterNoBackground",
-    "facebook",
-    "facebookNoBackground",
-    "google",
-    "googleNoBackground",
-    "linkedin",
-    "linkedinNoBackground",
-    "pinterest",
-    "pinterestNoBackground",
-    "youtube",
-    "youtubeNoBackground",
-    "tumblr",
-    "tumblrNoBackground",
-    "github",
-    "githubNoBackground",
-    "behance",
-    "behanceNoBackground",
-    "dribbble",
-    "dribbbleNoBackground",
-    "reddit",
-    "redditNoBackground",
     "white",
-    "simple",
+    "twitter",
+    "facebook",
+    "google",
+    "linkedin",
+    "pinterest",
+    "youtube",
+    "tumblr",
+    "github",
+    "behance",
+    "dribbble",
+    "reddit",
     "transparent"
   ]),
+  size: PropTypes.oneOf(["sm", "lg"]),
+  simple: PropTypes.bool,
   round: PropTypes.bool,
   fullWidth: PropTypes.bool,
   disabled: PropTypes.bool,
-  customClass: PropTypes.string,
-  // make the button's min width to 160px
-  wd: PropTypes.bool,
-  // make the button smaller
+  block: PropTypes.bool,
+  link: PropTypes.bool,
   justIcon: PropTypes.bool,
-  // button will float right
-  right: PropTypes.bool,
-  size: PropTypes.oneOf(["sm", "lg", "xs"])
+  className: PropTypes.string,
+  muiClasses: PropTypes.object
 };
 
 export default withStyles(buttonStyle)(RegularButton);

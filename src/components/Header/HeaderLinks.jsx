@@ -3,15 +3,14 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { Manager, Target, Popper } from "react-popper";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import MenuItem from "material-ui/Menu/MenuItem";
-import MenuList from "material-ui/Menu/MenuList";
-import ClickAwayListener from "material-ui/utils/ClickAwayListener";
-import Paper from "material-ui/Paper";
-import Grow from "material-ui/transitions/Grow";
-import IconButton from "material-ui/IconButton";
-import Hidden from "material-ui/Hidden";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Paper from "@material-ui/core/Paper";
+import Grow from "@material-ui/core/Grow";
+import Hidden from "@material-ui/core/Hidden";
 
 // @material-ui/icons
 import Person from "@material-ui/icons/Person";
@@ -21,7 +20,7 @@ import Search from "@material-ui/icons/Search";
 
 // core components
 import CustomInput from "components/CustomInput/CustomInput.jsx";
-import SearchButton from "components/CustomButtons/IconButton.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-dashboard-pro-react/components/headerLinksStyle";
 
@@ -73,49 +72,72 @@ class HeaderLinks extends React.Component {
             }
           }}
         />
-        <SearchButton
+        <Button
           color="white"
           aria-label="edit"
-          customClass={searchButton}
+          justIcon
+          round
+          className={searchButton}
         >
-          <Search className={classes.searchIcon} />
-        </SearchButton>
-        <IconButton
-          color="inherit"
+          <Search
+            className={classes.headerLinksSvg + " " + classes.searchIcon}
+          />
+        </Button>
+        <Button
+          color="transparent"
+          simple
           aria-label="Dashboard"
-          className={rtlActive ? classes.buttonLinkRTL:classes.buttonLink}
-          classes={{
-            label: rtlActive ? classes.labelRTL:""
+          justIcon
+          className={rtlActive ? classes.buttonLinkRTL : classes.buttonLink}
+          muiClasses={{
+            label: rtlActive ? classes.labelRTL : ""
           }}
         >
-          <Dashboard className={rtlActive ? classes.links + " " + classes.linksRTL:classes.links} />
+          <Dashboard
+            className={
+              classes.headerLinksSvg +
+              " " +
+              (rtlActive
+                ? classes.links + " " + classes.linksRTL
+                : classes.links)
+            }
+          />
           <Hidden mdUp>
-            <p className={classes.linkText}>
+            <span className={classes.linkText}>
               {rtlActive ? "لوحة القيادة" : "Dashboard"}
-            </p>
+            </span>
           </Hidden>
-        </IconButton>
+        </Button>
         <Manager className={managerClasses}>
           <Target>
-            <IconButton
-              color="inherit"
+            <Button
+              color="transparent"
+              justIcon
               aria-label="Notifications"
               aria-owns={open ? "menu-list" : null}
               aria-haspopup="true"
               onClick={this.handleClick}
-              className={rtlActive ? classes.buttonLinkRTL:classes.buttonLink}
-              classes={{
-                label: rtlActive ? classes.labelRTL:""
+              className={rtlActive ? classes.buttonLinkRTL : classes.buttonLink}
+              muiClasses={{
+                label: rtlActive ? classes.labelRTL : ""
               }}
             >
-              <Notifications className={rtlActive ? classes.links + " " + classes.linksRTL:classes.links} />
+              <Notifications
+                className={
+                  classes.headerLinksSvg +
+                  " " +
+                  (rtlActive
+                    ? classes.links + " " + classes.linksRTL
+                    : classes.links)
+                }
+              />
               <span className={classes.notifications}>5</span>
               <Hidden mdUp>
-                <p onClick={this.handleClick} className={classes.linkText}>
+                <span onClick={this.handleClick} className={classes.linkText}>
                   {rtlActive ? "إعلام" : "Notification"}
-                </p>
+                </span>
               </Hidden>
-            </IconButton>
+            </Button>
           </Target>
           <Popper
             placement="bottom-start"
@@ -176,21 +198,30 @@ class HeaderLinks extends React.Component {
             </ClickAwayListener>
           </Popper>
         </Manager>
-        <IconButton
-          color="inherit"
+        <Button
+          color="transparent"
           aria-label="Person"
-          className={rtlActive ? classes.buttonLinkRTL:classes.buttonLink}
-          classes={{
-            label: rtlActive ? classes.labelRTL:""
+          justIcon
+          className={rtlActive ? classes.buttonLinkRTL : classes.buttonLink}
+          muiClasses={{
+            label: rtlActive ? classes.labelRTL : ""
           }}
         >
-          <Person className={rtlActive ? classes.links + " " + classes.linksRTL:classes.links} />
+          <Person
+            className={
+              classes.headerLinksSvg +
+              " " +
+              (rtlActive
+                ? classes.links + " " + classes.linksRTL
+                : classes.links)
+            }
+          />
           <Hidden mdUp>
-            <p className={classes.linkText}>
+            <span className={classes.linkText}>
               {rtlActive ? "الملف الشخصي" : "Profile"}
-            </p>
+            </span>
           </Hidden>
-        </IconButton>
+        </Button>
       </div>
     );
   }

@@ -11,7 +11,11 @@ body {
     font-weight: 300;
     line-height: 1.5em;
 }
-
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+}
 blockquote footer:before, blockquote small:before {
     content: '\2014 \00A0';
 }
@@ -45,7 +49,7 @@ h5 {
 }
 
 h6 {
-    font-size: 1em;
+    font-size: 0.8em;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -67,12 +71,6 @@ body {
 
 blockquote p {
     font-style: italic;
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 300;
-    line-height: 1.5em;
 }
 
 a {

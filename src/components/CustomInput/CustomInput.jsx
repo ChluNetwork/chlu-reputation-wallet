@@ -1,19 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
-
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import FormControl from "material-ui/Form/FormControl";
-import FormHelperText from "material-ui/Form/FormHelperText";
-import Input from "material-ui/Input";
-import InputLabel from "material-ui/Input/InputLabel";
-
-// @material-ui/icons
-import Clear from "@material-ui/icons/Clear";
+import withStyles from "@material-ui/core/styles/withStyles";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
 import Check from "@material-ui/icons/Check";
+import Clear from "@material-ui/icons/Clear";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
+// nodejs library that concatenates classes
+import classNames from "classnames";
 
-import customInputStyle from "assets/jss/material-dashboard-pro-react/components/customInputStyle";
+import customInputStyle from "assets/jss/material-dashboard-pro-react/components/customInputStyle.jsx";
 
 function CustomInput({ ...props }) {
   const {
@@ -24,80 +21,48 @@ function CustomInput({ ...props }) {
     labelProps,
     inputProps,
     error,
-    success,
-    helpText,
-    rtlActive
+    white,
+    inputRootCustomClasses,
+    success
   } = props;
 
-  var labelClasses = cx({
+  const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
     [" " + classes.labelRootSuccess]: success && !error
   });
-
-  var formControlClasses = classes.formControl;
-  if (formControlProps !== undefined) {
-    formControlClasses += " " + formControlProps.className;
-  }
-  var underlineClasses = cx({
-    [classes.underline]: true,
+  const underlineClasses = classNames({
     [classes.underlineError]: error,
     [classes.underlineSuccess]: success && !error,
+    [classes.underline]: true,
+    [classes.whiteUnderline]: white
   });
-  if (inputProps !== undefined) {
-    formControlClasses =
-      formControlClasses +
-      " " +
-      cx({
-        [classes.inputWithAdornment]:
-          (inputProps.startAdornment !== undefined ||
-            inputProps.endAdornment !== undefined) &&
-          labelText === undefined
-      });
+  const marginTop = classNames({
+    [inputRootCustomClasses]: inputRootCustomClasses !== undefined
+  });
+  const inputClasses = classNames({
+    [classes.input]: true,
+    [classes.whiteInput]: white
+  });
+  var formControlClasses;
+  if (formControlProps !== undefined) {
+    formControlClasses = classNames(
+      formControlProps.className,
+      classes.formControl
+    );
+  } else {
+    formControlClasses = classes.formControl;
   }
+  var feedbackClasses = classes.feedback;
   if (inputProps !== undefined) {
-    labelClasses =
-      labelClasses +
-      " " +
-      cx({
-        [classes.labelWithAdornment]: inputProps.endAdornment !== undefined
-      });
+    if (inputProps.endAdornment !== undefined) {
+      feedbackClasses = feedbackClasses + " " + classes.feedbackRight;
+    }
   }
-  const successClasses =
-    classes.feedback +
-    " " +
-    classes.labelRootSuccess +
-    " " +
-    cx({
-      [classes.feedbackNoLabel]: labelText === undefined,
-      [classes.feedbackAdorment]:
-        inputProps !== undefined && inputProps.endAdornment !== undefined
-    });
-  const errorClasses =
-    classes.feedback +
-    " " +
-    classes.labelRootError +
-    " " +
-    cx({
-      [classes.feedbackNoLabel]: labelText === undefined,
-      [classes.feedbackAdorment]:
-        inputProps !== undefined && inputProps.endAdornment !== undefined
-    });
-  const input =
-    classes.input +
-    " " +
-    cx({
-      [classes.inputRTL]: rtlActive,
-      [classes.inputNoLabel]: labelText === undefined
-    });
   return (
-    <FormControl
-      {...formControlProps}
-      className={formControlClasses}
-      aria-describedby={id + "-text"}
-    >
+    <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
-          className={classes.labelRoot + labelClasses}
+          className={classes.labelRoot + " " + labelClasses}
           htmlFor={id}
           {...labelProps}
         >
@@ -106,7 +71,8 @@ function CustomInput({ ...props }) {
       ) : null}
       <Input
         classes={{
-          input: input,
+          input: inputClasses,
+          root: marginTop,
           disabled: classes.disabled,
           underline: underlineClasses
         }}
@@ -114,12 +80,9 @@ function CustomInput({ ...props }) {
         {...inputProps}
       />
       {error ? (
-        <Clear className={errorClasses} />
+        <Clear className={feedbackClasses + " " + classes.labelRootError} />
       ) : success ? (
-        <Check className={successClasses} />
-      ) : null}
-      {helpText !== undefined ? (
-        <FormHelperText id={id + "-text"}>{helpText}</FormHelperText>
+        <Check className={feedbackClasses + " " + classes.labelRootSuccess} />
       ) : null}
     </FormControl>
   );
@@ -132,10 +95,10 @@ CustomInput.propTypes = {
   id: PropTypes.string,
   inputProps: PropTypes.object,
   formControlProps: PropTypes.object,
+  inputRootCustomClasses: PropTypes.string,
   error: PropTypes.bool,
   success: PropTypes.bool,
-  helpText: PropTypes.string,
-  rtlActive: PropTypes.bool
+  white: PropTypes.bool
 };
 
 export default withStyles(customInputStyle)(CustomInput);

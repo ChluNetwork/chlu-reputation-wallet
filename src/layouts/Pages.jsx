@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
-// creates a beautiful scrollbar
-// import PerfectScrollbar from "perfect-scrollbar";
-// import "perfect-scrollbar/css/perfect-scrollbar.css";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
 import PagesHeader from "components/Header/PagesHeader.jsx";
@@ -21,19 +18,6 @@ import bgImage from "assets/img/chlu_background.png";
 // var ps;
 
 class Pages extends React.Component {
-  componentDidMount() {
-    // if (navigator.platform.indexOf("Win") > -1) {
-    //   ps = new PerfectScrollbar(this.refs.wrapper, {
-    //     suppressScrollX: true,
-    //     suppressScrollY: false
-    //   });
-    // }
-  }
-  componentWillUnmount() {
-    // if (navigator.platform.indexOf("Win") > -1) {
-    //   ps.destroy();
-    // }
-  }
   render() {
     const { classes, ...rest } = this.props;
     return (

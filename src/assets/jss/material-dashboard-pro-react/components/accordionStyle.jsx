@@ -1,8 +1,4 @@
-// ##############################
-// // // Accordion component style
-// #############################
-
-import { roseColor } from "assets/jss/material-dashboard-pro-react.jsx";
+import { primaryColor } from "assets/jss/material-dashboard-pro-react.jsx";
 
 const accordionStyle = theme => ({
   root: {
@@ -27,14 +23,23 @@ const accordionStyle = theme => ({
     borderTopRightRadius: "3px",
     color: "#3C4858",
     "&:hover": {
-      color: roseColor
+      color: primaryColor
     }
   },
   expansionPanelSummaryExpaned: {
-    color: roseColor
+    color: primaryColor,
+    "& $expansionPanelSummaryExpandIcon": {
+      [theme.breakpoints.up("md")]: {
+        top: "auto !important"
+      },
+      transform: "rotate(180deg)",
+      [theme.breakpoints.down("sm")]: {
+        top: "10px !important"
+      }
+    }
   },
   expansionPanelSummaryContent: {
-    margin: "0"
+    margin: "0 !important"
   },
   expansionPanelSummaryExpandIcon: {
     [theme.breakpoints.up("md")]: {
@@ -46,15 +51,7 @@ const accordionStyle = theme => ({
       top: "10px !important"
     }
   },
-  expansionPanelSummaryExpandIconExpanded: {
-    [theme.breakpoints.up("md")]: {
-      top: "auto !important"
-    },
-    transform: "rotate(180deg)",
-    [theme.breakpoints.down("sm")]: {
-      top: "10px !important"
-    }
-  },
+  expansionPanelSummaryExpandIconExpanded: {},
   title: {
     fontSize: "15px",
     fontWeight: "bolder",

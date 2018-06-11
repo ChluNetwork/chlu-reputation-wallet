@@ -6,8 +6,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
 import Header from "components/Header/Header.jsx";
@@ -52,11 +52,11 @@ class Dashboard extends React.Component {
   }
   componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
-      // eslint-disable-next-line
       ps = new PerfectScrollbar(this.refs.mainPanel, {
         suppressScrollX: true,
         suppressScrollY: false
       });
+      document.body.style.overflow = "hidden";
     }
   }
   componentWillUnmount() {
@@ -67,6 +67,9 @@ class Dashboard extends React.Component {
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
       this.refs.mainPanel.scrollTop = 0;
+      if(this.state.mobileOpen){
+        this.setState({mobileOpen: false})
+      }
     }
   }
   sidebarMinimize() {

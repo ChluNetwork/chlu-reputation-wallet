@@ -2,12 +2,11 @@ import React from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
 
-// material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Card from "material-ui/Card";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import Button from "components/CustomButtons/Button.jsx";
+import Card from "components/Card/Card.jsx";
 
 import wizardStyle from "assets/jss/material-dashboard-pro-react/components/wizardStyle.jsx";
 
@@ -41,29 +40,44 @@ class Wizard extends React.Component {
       width: width,
       movingTabStyle: {
         transition: "transform 0s"
-      }
+      },
+      allStates: {}
     };
     this.navigationStepChange = this.navigationStepChange.bind(this);
     this.refreshAnimation = this.refreshAnimation.bind(this);
     this.previousButtonClick = this.previousButtonClick.bind(this);
     this.previousButtonClick = this.previousButtonClick.bind(this);
     this.finishButtonClick = this.finishButtonClick.bind(this);
+    this.updateWidth = this.updateWidth.bind(this)
   }
   componentDidMount() {
     this.refreshAnimation(0);
-    window.addEventListener("resize", this.updateWidth.bind(this));
+    window.addEventListener("resize", this.updateWidth);
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateWidth.bind(this), true);
+    window.removeEventListener("resize", this.updateWidth);
   }
   updateWidth() {
     this.refreshAnimation(this.state.currentStep);
   }
   navigationStepChange(key) {
+    console.log(this.state.allStates);
     if (this.props.steps) {
       var validationState = true;
       if (key > this.state.currentStep) {
         for (var i = this.state.currentStep; i < key; i++) {
+          if (this[this.props.steps[i].stepId].sendState !== undefined) {
+            this.setState({
+              allStates: [
+                ...this.state.allStates,
+                {
+                  [this.props.steps[i].stepId]: this[
+                    this.props.steps[i].stepId
+                  ].sendState()
+                }
+              ]
+            });
+          }
           if (
             this[this.props.steps[i].stepId].isValidated !== undefined &&
             this[this.props.steps[i].stepId].isValidated() === false
@@ -96,6 +110,21 @@ class Wizard extends React.Component {
             undefined)) ||
       this.props.validate === undefined
     ) {
+      if (
+        this[this.props.steps[this.state.currentStep].stepId].sendState !==
+        undefined
+      ) {
+        this.setState({
+          allStates: [
+            ...this.state.allStates,
+            {
+              [this.props.steps[this.state.currentStep].stepId]: this[
+                this.props.steps[this.state.currentStep].stepId
+              ].sendState()
+            }
+          ]
+        });
+      }
       var key = this.state.currentStep + 1;
       this.setState({
         currentStep: key,
@@ -107,6 +136,21 @@ class Wizard extends React.Component {
     }
   }
   previousButtonClick() {
+    if (
+      this[this.props.steps[this.state.currentStep].stepId].sendState !==
+      undefined
+    ) {
+      this.setState({
+        allStates: [
+          ...this.state.allStates,
+          {
+            [this.props.steps[this.state.currentStep].stepId]: this[
+              this.props.steps[this.state.currentStep].stepId
+            ].sendState()
+          }
+        ]
+      });
+    }
     var key = this.state.currentStep - 1;
     if (key >= 0) {
       this.setState({
@@ -218,9 +262,9 @@ class Wizard extends React.Component {
               });
               return (
                 <div className={stepContentClasses} key={key}>
-                  {/* <prop.stepComponent innerRef={prop.stepId}/> */}
                   <prop.stepComponent
                     innerRef={node => (this[prop.stepId] = node)}
+                    allStates={this.state.allStates}
                   />
                 </div>
               );
@@ -230,7 +274,7 @@ class Wizard extends React.Component {
             <div className={classes.left}>
               {this.state.previousButton ? (
                 <Button
-                  customClass={this.props.previousButtonClasses}
+                  className={this.props.previousButtonClasses}
                   onClick={() => this.previousButtonClick()}
                 >
                   {this.props.previousButtonText}
@@ -241,7 +285,7 @@ class Wizard extends React.Component {
               {this.state.nextButton ? (
                 <Button
                   color="rose"
-                  customClass={this.props.nextButtonClasses}
+                  className={this.props.nextButtonClasses}
                   onClick={() => this.nextButtonClick()}
                 >
                   {this.props.nextButtonText}
@@ -250,7 +294,7 @@ class Wizard extends React.Component {
               {this.state.finishButton ? (
                 <Button
                   color="rose"
-                  customClass={this.finishButtonClasses}
+                  className={this.finishButtonClasses}
                   onClick={() => this.finishButtonClick()}
                 >
                   {this.props.finishButtonText}
