@@ -4,7 +4,7 @@ import Face from "@material-ui/icons/Face";
 import RecordVoiceOver from "@material-ui/icons/RecordVoiceOver";
 
 // material-ui components
-import withStyles from "@material-ui/core/styles";
+import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
 // core components
